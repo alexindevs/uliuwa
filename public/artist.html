@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist - Uliuwa</title>
+    <link rel="stylesheet" href="css/artist.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="header">Uliuwa</h1>
+        <ul class="navlist">
+            <li onclick="window.location.href = '/artists'">Artists</li>
+            <li>Exhibitions</li>
+            <li>Store</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <main>
+    <section id="hero">
+    <img src="art/Watcher_1.jpg" alt="Watcher 1" class="banner">
+    <div class="text">
+        <h1 class="art-title">Watcher 1</h1>
+        <h4 class="title">Olumide Onadipe</h4>
+    </div>
+    </section>
+    <section id="about">
+        <div class="left">
+            <p>OLUMIDE ONADIPE (born 1982) is a multi-disciplinary visual artist whose sculptures are built using diverse media including plastics. Olumide presents sculptural works which are allusions to socio-political issues.</p>
+        </div>
+        <div class="right">
+            <p>Olumide is fascinated by textures and environmental themes, and expresses this fascination through playful iterations. He studied arts and education at the University of Nigeria Nsukka and the University of Lagos, where he graduated with a master's degree in 2012. He has taken part in group exhibitions in London, Germany, Ghana, Nigeria and USA.</p><br>
+            <p>Olumide's major collaborations include an artist residency and Open Studios exhibition with Arthouse Contemporary (2016), Colours of Hope in partnership with the Cancer Foundation (CLWCF), Children Living with Cancer Foundation (2014), American Nigerian Cultural Collaborative Project, US Consulate and Nike Art Gallery Lagos (2013), and Beyond Boundaries, Nubuke Foundation, Accra (2013).</p>
+        </div>
+    </section>
+    <section id="artworks">
+        <h2>Works</h2>
+        <div id="artlist">
+            <!-- This will be generated automatically -->
+        </div>
+    </section>
+    <section id="biography">
+        <h2>Biography</h2>
+        <p>OLUMIDE ONADIPE (born 1982) is a multidisciplinary visual artist whose idiosyncratic sculptures are built using diverse media including plastics. Olumide presents sculptural works which are allusions to socio-political issues. But these physical commentaries on events, social customs, and malaises that affect Nigerian society are rarely explicit. In most cases, they vaguely suggest something through their form. In a few others, it is only the title of the work that open the door to possible interpretations and readings by the viewer. He believes that behind the literary interpretation of objects and events is a multiplicity of encrypted connotation. Olumide is fascinated by textures and environmental themes, and expresses this fascination through playful iterations. He studied arts and education at the University of Nigeria Nsukka and the University of Lagos, where he graduated with a master's degree in 2012. He has taken part in group exhibitions in London, Germany, Ghana, Nigeria and USA. Olumide's major collaborations include an artist residency and Open Studios exhibition with Arthouse Contemporary (2016), Colours of Hope in partnership with the Cancer Foundation (CLWCF), Children Living with Cancer Foundation (2014), American Nigerian Cultural Collaborative Project, US Consulate and Nike Art Gallery Lagos (2013), and Beyond Boundaries, Nubuke Foundation, Accra (2013). He had his 3rd solo exhibition, Connecting the Dots, in 2018, and his works were shown at ART X Lagos (2017); 1-54 Contemporary African Art Fair in London (2017); START Art Fair, London (2018); Material Insanity, Museum of African Contemporary Art Al Maaden (MACAAL), Marrakech (2019); as well as Art Context Miami Art Fair in 2019.</p>
+    </section>
+    <section id="exhibitions">
+        <h2>Exhibitions</h2>
+        <div class="links">
+            <a onclick="toggleExhibitions()" class="active">Current</a>
+            <a onclick="toggleExhibitions()">Upcoming</a>
+            <a onclick="toggleExhibitions()">Past</a>
+        </div>
+        <div id="current">
+            <div class="exhibition" data-marker="current">
+                <img src="art/olumide (16).jpg" alt="" class="exh-img">
+                <div class="text">
+                    <h2 class="exh-name">Chairman 1</h2>
+                    <h4 class="exh-date">July 12 to July 24, 2022</h4>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi magnam officia, a porro eligendi quod facere, maiores suscipit harum dolorum voluptas sapiente quae. Ipsum neque illo quibusdam, dicta impedit, veritatis ullam iure accusamus aut fuga asperiores modi natus amet praesentium recusandae eos, fugiat reiciendis dolore. Ab culpa pariatur nesciunt consequuntur repellat sint, doloribus dignissimos possimus iste dolorem nemo excepturi.</p>
+                    <div class="exh-icons">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/000000/arrow.png" class="exh-icon left" alt="arrow"/>
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/arrow.png" class="exh-icon right" alt="arrow"/>
+                    </div>
+                </div>
+            </div>
+            <div class="exhibition">
+                <img src="art/olumide (16).jpg" alt="" class="exh-img">
+                <div class="text">
+                    <h2 class="exh-name">Chairman 1</h2>
+                    <h4 class="exh-date">July 12 to July 24, 2022</h4>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi magnam officia, a porro eligendi quod facere, maiores suscipit harum dolorum voluptas sapiente quae. Ipsum neque illo quibusdam, dicta impedit, veritatis ullam iure accusamus aut fuga asperiores modi natus amet praesentium recusandae eos, fugiat reiciendis dolore. Ab culpa pariatur nesciunt consequuntur repellat sint, doloribus dignissimos possimus iste dolorem nemo excepturi.</p>
+                    <div class="exh-icons">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/000000/arrow.png" class="exh-icon left" alt="arrow"/>
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/arrow.png" class="exh-icon right" alt="arrow"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="exhibition">
+                <img src="art/olumide (16).jpg" alt="" class="exh-img">
+                <div class="text">
+                    <h2 class="exh-name">Chairman 1</h2>
+                    <h4 class="exh-date">July 12 to July 24, 2022</h4>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi magnam officia, a porro eligendi quod facere, maiores suscipit harum dolorum voluptas sapiente quae. Ipsum neque illo quibusdam, dicta impedit, veritatis ullam iure accusamus aut fuga asperiores modi natus amet praesentium recusandae eos, fugiat reiciendis dolore. Ab culpa pariatur nesciunt consequuntur repellat sint, doloribus dignissimos possimus iste dolorem nemo excepturi.</p>
+                    <div class="exh-icons">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/000000/arrow.png" class="exh-icon left" alt="arrow"/>
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/arrow.png" class="exh-icon right" alt="arrow"/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    </main> 
+    <footer>
+        <div class="footer-left">
+            <div class="heading"><h4>Contact Us</h4>
+            <img class="icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-f.png" alt="facebook-f"/>
+            <img class="icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter--v1.png" alt="instagram-new--v1"/>
+            <img class="icon" src="https://img.icons8.com/windows/32/ffffff/instagram-new.png" alt="instagram-new"/>
+        </div>
+        <p>Address: 8c Room 4, Lekki phase 1, Lagos, Nigeria.</p>
+        <p>Email: contact@uliuwa.com</p>
+        </div>
+        <div class="footer-right">
+            <h1 class="header" id="footer-header">Uliuwa</h1>
+            <ul class="navlist">
+                <li>Artists</li>
+                <li>Exhibitions</li>
+                <li>Store</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+            <p>&copy; Uliuwa 2023</p>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/artist.js"></script>
+</body>
+</html>

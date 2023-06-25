@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uliuwa - The Home of Wealth</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="header">Uliuwa</h1>
+        <ul class="navlist">
+            <li onclick="window.location.href = '/artists'">Artists</li>
+            <li>Exhibitions</li>
+            <li>Store</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <main>
+        <section id="display">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                <!-- This will be updated dynamically through javascript. -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section id="register">
+            <h2>Welcome to Uliuwa</h2>
+            <p>Signup for our community newsletters</p>
+            <input type="text" name="fullName" id="fullName" placeholder="Enter your full name">
+            <input type="email" name="email" id="email" placeholder="enter your email">
+            <input type="text" name="interests" id="interests" placeholder="Your Interests (Please separate with commas)">
+            <div class="custom-select">
+                <div class="select-selected">What best describes you?</div>
+                <div class="select-items">
+                  <div class="select-item" data-value="Artist">Artist</div>
+                  <div class="select-item" data-value="ArtManager">Art Manager</div>
+                </div>
+                <select name="description" id="description" style="display: none;">
+                  <option value="Artist">Artist</option>
+                  <option value="ArtManager">Art Manager</option>
+                </select>
+              </div>
+              <div class="custom-select">
+                <div class="select-selected">Do you work in arts?</div>
+                <div class="select-items">
+                  <div class="select-item" data-value="Yes">Yes</div>
+                  <div class="select-item" data-value="No">No</div>
+                </div>
+                <select name="workInArts" id="workInArts" style="display: none;">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>              
+            <button type="submit">Submit</button>
+            <p>By submitting this form, you're agreeing to our <a href="terms">terms and conditions.</a></p>
+        </section>  
+    </main>
+    <div class="after"></div>
+    <footer>
+        <div class="footer-left">
+            <div class="heading"><h4>Contact Us</h4>
+            <img class="icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-f.png" alt="facebook-f"/>
+            <img class="icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter--v1.png" alt="instagram-new--v1"/>
+            <img class="icon" src="https://img.icons8.com/windows/32/ffffff/instagram-new.png" alt="instagram-new"/>
+        </div>
+        <p>Address: 8c Room 4, Lekki phase 1, Lagos, Nigeria.</p>
+        <p>Email: contact@uliuwa.com</p>
+        </div>
+        <div class="footer-right">
+            <h1 class="header" id="footer-header">Uliuwa</h1>
+            <ul class="navlist">
+                <li>Artists</li>
+                <li>Exhibitions</li>
+                <li>Store</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+            <p>&copy; Uliuwa 2023</p>
+        </div>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
