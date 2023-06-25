@@ -27,10 +27,6 @@ body {
   color: black;
 }
 
-.attribute {
-color: transparent
-}
-
 .header {
   margin-right: auto;
   font-size: 40px;
@@ -285,7 +281,7 @@ main #exhibitions #current {
   display: flex;
   overflow: hidden;
   position: relative;
-  height: 70vh;
+  height: 90vh;
 }
 main #exhibitions #current .exhibition {
   display: flex;
