@@ -27,6 +27,10 @@ body {
   color: black;
 }
 
+.attribute {
+  display: none;
+}
+
 .header {
   margin-right: auto;
   font-size: 40px;
