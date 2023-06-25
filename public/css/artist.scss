@@ -312,8 +312,6 @@ main {
             text-align: center;
         }
 
-
-
         .links {
             display: block;
             margin: 40px auto;
@@ -324,11 +322,37 @@ main {
                 margin-right: 50px;
                 color: #1C1C1C;
                 font-size: 25px;
-                font-family: Gilroy;
-                font-weight: 700;
+                font-family: 'Gilroy';
                 text-transform: uppercase;
                 line-height: 30px;
                 word-wrap: break-word;
+            }
+
+            a.active {
+                color: black;
+                position: relative;
+                font-weight: bold;
+
+                &::after {
+                    content: '';
+                    width: 0;
+                    position: absolute;
+                    top: 110%;
+                    height: 3px;
+                    background-color: black;
+                    left: 0;
+                    animation: widen 1s ease 1s 1 normal forwards;
+                }
+
+                @keyframes widen {
+                    0% {
+                        width: 0%;
+                    }
+
+                    100% {
+                        width: 100%;
+                    }
+                }
             }
         }
 
@@ -390,6 +414,60 @@ main {
                     }
                     }
                 }
+        }
+
+        #past {
+            height: 70vh;
+            overflow: auto;
+            
+            .past-exhibition {
+                display: flex;
+                gap: 40px;
+                place-items: center;
+                justify-content: center;
+                padding: 30px 0px;
+                margin: 20px auto;
+                background-color: rgb(250, 249, 249);
+                width:  90%;
+                box-shadow: 0px 6px 6px rgba(121, 120, 120, 0.36);
+
+                .exh-img {
+                    width: 100px;
+                    height: 100px;
+                    flex-basis: 100px;
+                }
+
+                .text > *:nth-child(n) {
+                    padding-bottom: 10px;
+                  }
+            }
+        }
+
+        #upcoming {
+            height: 70vh;
+            overflow: auto;
+            
+            .upcoming-exhibition {
+                display: flex;
+                gap: 40px;
+                place-items: center;
+                justify-content: center;
+                padding: 30px 0px;
+                margin: 20px auto;
+                background-color: rgb(250, 249, 249);
+                width:  90%;
+                box-shadow: 0px 6px 6px rgba(121, 120, 120, 0.36);
+
+                .exh-img {
+                    width: 100px;
+                    height: 100px;
+                    flex-basis: 100px;
+                }
+
+                .text > *:nth-child(n) {
+                    padding-bottom: 10px;
+                  }
+            }
         }
     }
         
