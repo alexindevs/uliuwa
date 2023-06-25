@@ -336,7 +336,7 @@ main {
             display: flex;
             overflow: hidden;
             position: relative;
-            height: 90vh;
+            height: 70vh;
 
 
             .exhibition {
@@ -354,7 +354,10 @@ main {
                     height: 100%;
                 }
 
-                
+                .material-symbols-sharp {
+                    font-size: 50px;
+                    font-weight: 700;
+                }
 
                  
 
@@ -382,8 +385,8 @@ main {
                         font-size: 20px;
                     }
                     .exh-icon.left {
-                        transform: rotate(180deg);
                         margin-right: 35px;
+        
                     }
                     }
                 }

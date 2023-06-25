@@ -281,7 +281,7 @@ main #exhibitions #current {
   display: flex;
   overflow: hidden;
   position: relative;
-  height: 90vh;
+  height: 70vh;
 }
 main #exhibitions #current .exhibition {
   display: flex;
@@ -296,6 +296,10 @@ main #exhibitions #current .exhibition {
 main #exhibitions #current .exhibition .exh-img {
   width: 40vw;
   height: 100%;
+}
+main #exhibitions #current .exhibition .material-symbols-sharp {
+  font-size: 50px;
+  font-weight: 700;
 }
 main #exhibitions #current .exhibition .text {
   width: 40%;
@@ -318,7 +322,6 @@ main #exhibitions #current .exhibition .text .description {
   font-size: 20px;
 }
 main #exhibitions #current .exhibition .text .exh-icon.left {
-  transform: rotate(180deg);
   margin-right: 35px;
 }
 
