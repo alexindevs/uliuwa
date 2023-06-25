@@ -37,6 +37,8 @@ function generateArtistHTML(data) {
 
     const nameHeading = $('<h4>').addClass('art_title').text(artist.name);
 
+    const enquireButton = $('<button>').addClass('art-button').text('EXPLORE');
+
     const yearPara = $('<p>').addClass('year').text(artist.year);
 
     const titlePara = $('<p>').addClass('title').text(artist.title);
@@ -45,6 +47,7 @@ function generateArtistHTML(data) {
     textDiv.append(yearPara);
     textDiv.append(titlePara);
     artDetails.append(textDiv);
+    artDetails.append(enquireButton)
     artistDiv.append(image);
     artistDiv.append(artDetails);
     artList.append(artistDiv);

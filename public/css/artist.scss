@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&family=Montserrat:wght@100;400&display=swap');
+@import "animations.css";
 
 @font-face {
     font-family: 'Gilroy';
@@ -191,22 +192,10 @@ main {
             margin-bottom: 20px;
 
         }
-
-        @keyframes fadeIn {
-            0% {
-                transform: translateY(-40px);
-                opacity: 0;
-            }
-        
-            100% {
-                transform: translateY(0px);
-                opacity: 1;
-            }
-        }
         
             .fade-in-up {
                 opacity: 0;
-                animation-name: fadeIn;
+                animation-name: fadeInUp;
                 animation-duration: 1s;
                 animation-timing-function: ease;
                 animation-delay: 2s;
@@ -229,18 +218,20 @@ main {
         
         
                .artist { 
-                flex-basis: 30;
+                flex-basis: 30%;
         
         
                 .art-details {
                     display: flex;
                     gap: 20px;
                     text-transform: italic;
+                    width: 100%;
                   
                     
         
                 .text {
                     margin-top: 10px;
+                    width: 58%;
 
                     & > * {
                             margin-top: 5px;
