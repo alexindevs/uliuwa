@@ -203,6 +203,8 @@ main {
                 animation-fill-mode: forwards;
             
             }
+
+
             #artlist {
                 display: flex;
                 gap: 60px;
@@ -332,7 +334,7 @@ main {
                     height: 3px;
                     background-color: black;
                     left: 0;
-                    animation: widen 1s ease 1s 1 normal forwards;
+                    animation: widen 1s ease 0s 1 normal forwards;
                 }
 
                 @keyframes widen {
@@ -410,6 +412,7 @@ main {
         #past {
             height: 70vh;
             overflow: auto;
+            display: none;
             
             .past-exhibition {
                 display: flex;
@@ -435,6 +438,7 @@ main {
         }
 
         #upcoming {
+            display: none;
             height: 70vh;
             overflow: auto;
             

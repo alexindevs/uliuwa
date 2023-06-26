@@ -282,7 +282,7 @@ main #exhibitions .links a.active::after {
   height: 3px;
   background-color: black;
   left: 0;
-  animation: widen 1s ease 1s 1 normal forwards;
+  animation: widen 1s ease 0s 1 normal forwards;
 }
 @keyframes widen {
   0% {
@@ -342,6 +342,7 @@ main #exhibitions #current .exhibition .text .exh-icon.left {
 main #exhibitions #past {
   height: 70vh;
   overflow: auto;
+  display: none;
 }
 main #exhibitions #past .past-exhibition {
   display: flex;
@@ -363,6 +364,7 @@ main #exhibitions #past .past-exhibition .text > *:nth-child(n) {
   padding-bottom: 10px;
 }
 main #exhibitions #upcoming {
+  display: none;
   height: 70vh;
   overflow: auto;
 }

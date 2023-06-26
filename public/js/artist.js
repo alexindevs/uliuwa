@@ -107,7 +107,29 @@ prevSlide.on("click", function() {
   });
 });
 
+function toggleExhibitions(element) {
+  var exhibitionId = '';
 
+  if (element.textContent === 'Current') {
+    exhibitionId = '#current';
+  } else if (element.textContent === 'Past') {
+    exhibitionId = '#past';
+  } else if (element.textContent === 'Upcoming') {
+    exhibitionId = '#upcoming';
+  }
+
+  // Remove the active class from all links
+  $('.links a').removeClass('active');
+
+  // Add the active class to the clicked link
+  $(element).addClass('active');
+
+  // Fade out all exhibition divs except the one with the selected ID
+  $('.exhibitions').not(exhibitionId).fadeOut();
+
+  // Fade in the exhibition div with the selected ID
+  $(exhibitionId).fadeIn();
+}
 
 
 
