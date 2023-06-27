@@ -31,6 +31,15 @@
 body {
     width: 100%;
     color: black;
+    scroll-behavior: smooth;
+}
+
+.preloader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 70;
 }
 
 .header {
@@ -68,8 +77,6 @@ body {
     color: white;
 
 }
-
-
 
 main {
     #hero {
@@ -193,17 +200,6 @@ main {
 
         }
         
-            .fade-in-up {
-                opacity: 0;
-                animation-name: fadeInUp;
-                animation-duration: 1s;
-                animation-timing-function: ease;
-                animation-delay: 2s;
-                animation-iteration-count: 1;
-                animation-fill-mode: forwards;
-            
-            }
-
 
             #artlist {
                 display: flex;
@@ -467,7 +463,6 @@ main {
     }
         
 }
-
 
 footer {
     padding: 70px;

@@ -232,7 +232,7 @@ main #display .attribution .explore {
 footer {
   padding: 70px;
   display: grid;
-  background: #1C1C1C;
+  background: gold;
   grid-template-columns: auto auto;
   position: fixed;
   bottom: 0;

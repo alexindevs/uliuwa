@@ -25,6 +25,10 @@ app.get('/artist', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'artist.html'));
 });
 
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+});
+
 // Start the server
 const port = 3000;
 app.listen(port, () => {

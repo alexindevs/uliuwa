@@ -27,7 +27,6 @@ body {
   color: black;
 }
 
-
 .header {
   margin-right: auto;
   font-size: 40px;
@@ -62,84 +61,111 @@ body {
   color: black;
 }
 
-
-.preloader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-  z-index: 70;
-  visibility: hidden;
+main #contact {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40px 80px;
+  gap: 50px;
 }
-
-main > h2 {
+main #contact .left {
+  flex-basis: 50%;
+}
+main #contact .left .heading {
   font-size: 80px;
   font-weight: 900;
   font-family: "Gilroy Medium";
   color: black;
   line-height: 70px;
   letter-spacing: -0.04em;
-  margin-bottom: 75px;
-  margin-left: 60px;
+  margin-bottom: 35px;
+  margin-top: 60px;
+}
+main #contact .left .heading:first-of-type {
   margin-top: 130px;
+  margin-bottom: 75px;
 }
-@keyframes fadeIn {
-  0% {
-    transform: translateY(-40px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+main #contact .left a {
+  color: black;
+  text-transform: capitalize;
+  text-decoration-line: underline;
+  text-decoration-color: black;
+  display: block;
+  padding-bottom: 20px;
 }
-main .fade-in-up {
-  opacity: 0;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+main #contact .right {
+  flex-basis: 50%;
+  padding-top: 130px;
 }
-main #artlist {
-  display: flex;
-  gap: 60px;
-  width: 90%;
-  margin: auto;
-  margin-bottom: 70px;
-  flex-wrap: wrap;
-}
-main #artlist .artwork {
-  width: 350px;
-  height: 300px;
-}
-main #artlist .artist {
-  flex-basis: 30;
-}
-main #artlist .artist .art-details {
-  display: flex;
-  gap: 20px;
-}
-main #artlist .artist .art-details .text {
-  margin-top: 10px;
-}
-main #artlist .artist .art-details .text .art_title {
-  font-weight: 900;
-  font-size: 20px;
-  text-transform: uppercase;
-  font-family: "Gilroy Medium";
-}
-main #artlist .artist .art-details button {
-  color: white;
-  background-color: #1C1C1C;
-  width: 110px;
-  margin: 10PX;
-  height: 40px;
+main #contact .right input[type=text], main #contact .right input[type=email], main #contact .right input[type=tel], main #contact .right textarea {
+  background-color: rgb(238, 236, 236);
+  padding: 15px;
+  display: block;
   border: none;
-  font-weight: 700;
+  width: 100%;
+  margin-bottom: 35px;
+}
+main #contact .right label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+main #contact .right .custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 35px;
+}
+main #contact .right .custom-select .select-trigger {
+  background-color: rgb(238, 236, 236);
+  padding: 15px;
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+main #contact .right .custom-select .arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: #000 transparent transparent transparent;
+}
+main #contact .right .custom-select .selected-option {
+  display: inline-block;
+}
+main #contact .right .custom-select .select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(238, 236, 236);
+  display: none;
+}
+main #contact .right .custom-select .option {
+  padding: 10px;
+  cursor: pointer;
+}
+main #contact .right #serviceType {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+main #contact .right input[type=submit] {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  height: 30px;
+  color: white;
+  width: 100%;
+  margin-bottom: 35px;
 }
 
 footer {
@@ -188,4 +214,4 @@ footer .footer-right .navlist {
   width: 100%;
 }
 
-/*# sourceMappingURL=artistSelection.css.map */
+/*# sourceMappingURL=contact.css.map */

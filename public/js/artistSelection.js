@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const artistDiv = document.createElement('div');
         artistDiv.classList.add('artist', 'fade-in-up');
         artistDiv.style.animationDelay = `${index * 400}ms`;
-        artistDiv.setAttribute('onclick', `window.location.href = 'artist.html'`); 
+        artistDiv.setAttribute('onclick', `document.querySelector('.preloader').classList.add('fadeInBlack'); setTimeout(() => { window.location.href = '/artist'; }, 4000);`);
         const image = document.createElement('img');
         image.src = artist.imageSrc;
         image.alt = artist.alt;

@@ -25,34 +25,52 @@ const artistData = [
 function generateArtistHTML(data) {
   const artList = $('#artlist');
 
-  data.forEach((artist, index) => {
-    const artistDiv = $('<div>').addClass('artist fade-in-up');
-    artistDiv.css('animation-delay', `${index * 400}ms`);
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const artistDiv = entry.target;
+        const index = $(artistDiv).index();
 
+        $(artistDiv).addClass('fadeInUp');
+        $(artistDiv).css('animation-delay', `${index * 400}ms`);
+
+        observer.unobserve(artistDiv);
+      }
+    });
+  };
+
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver(callback, options);
+
+  data.forEach(artist => {
+    const artistDiv = $('<div>').addClass('artist');
     const image = $('<img>').attr('src', artist.imageSrc).attr('alt', artist.alt).addClass('artwork');
-
     const artDetails = $('<div>').addClass('art-details');
-
     const textDiv = $('<div>').addClass('text');
-
     const nameHeading = $('<h4>').addClass('art_title').text(artist.name);
-
     const enquireButton = $('<button>').addClass('art-button').text('EXPLORE');
-
     const yearPara = $('<p>').addClass('year').text(artist.year);
-
     const titlePara = $('<p>').addClass('title').text(artist.title);
 
     textDiv.append(nameHeading);
     textDiv.append(yearPara);
     textDiv.append(titlePara);
     artDetails.append(textDiv);
-    artDetails.append(enquireButton)
+    artDetails.append(enquireButton);
     artistDiv.append(image);
     artistDiv.append(artDetails);
     artList.append(artistDiv);
+
+    observer.observe(artistDiv[0]);
   });
+
 }
+
 
 // JavaScript for Exhibition Slider
 
@@ -138,6 +156,40 @@ $(document).ready(function() {
   generateArtistHTML(artistData);
   generateArtistHTML(artistData);
 
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const h1Element = entry.target.querySelector('.art-title');
+        const h4Element = entry.target.querySelector('.title');
   
-});
+        if (h1Element)
+          h1Element.classList.add('fade-in');
+        if (h4Element)
+          h4Element.classList.add('fade-in');
+      } else {
+        const h1Element = entry.target.querySelector('.art-title');
+        const h4Element = entry.target.querySelector('.title');
+  
+        if (h1Element)
+          h1Element.classList.remove('fade-in');
+        if (h4Element)
+          h4Element.classList.remove('fade-in');
+      }
+    });
+  };
+  
+  const targetElements = document.querySelectorAll('.text');
+  
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.7
+  };
+  
+  const observer = new IntersectionObserver(callback, options);
+  
+  targetElements.forEach(element => {
+    observer.observe(element);
+  });  
+})  
 
