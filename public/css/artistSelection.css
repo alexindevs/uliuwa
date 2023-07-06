@@ -22,11 +22,22 @@
   font-family: "Gilroy";
 }
 
+html {
+  position: relative;
+}
+html .preloader {
+  position: absolute;
+  width: 100%;
+  height: 100% !important;
+  background-color: black;
+  z-index: 70;
+  visibility: hidden;
+}
+
 body {
   width: 100%;
   color: black;
 }
-
 
 .header {
   margin-right: auto;
@@ -52,26 +63,11 @@ body {
 }
 
 .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   display: flex;
   z-index: 20;
   justify-content: space-between;
   color: black;
-}
-
-
-.preloader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-  z-index: 70;
-  visibility: hidden;
 }
 
 main > h2 {
@@ -85,7 +81,7 @@ main > h2 {
   margin-left: 60px;
   margin-top: 130px;
 }
-@keyframes fadeIn {
+@keyframes fadeInUp {
   0% {
     transform: translateY(-40px);
     opacity: 0;
@@ -97,7 +93,7 @@ main > h2 {
 }
 main .fade-in-up {
   opacity: 0;
-  animation-name: fadeIn;
+  animation-name: fadeInUp;
   animation-duration: 1s;
   animation-timing-function: ease;
   animation-delay: 2s;
@@ -111,13 +107,50 @@ main #artlist {
   margin: auto;
   margin-bottom: 70px;
   flex-wrap: wrap;
-}
-main #artlist .artwork {
-  width: 350px;
-  height: 300px;
+  justify-content: space-evenly;
 }
 main #artlist .artist {
   flex-basis: 30;
+}
+main #artlist .artist .art {
+  position: relative;
+}
+main #artlist .artist .art .artwork {
+  width: 350px;
+  height: 300px;
+  transition: filter 0.5s;
+}
+main #artlist .artist .art:hover > .artwork {
+  filter: blur(2px) brightness(70%) grayscale(70%);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+main #artlist .artist .art:hover .description {
+  display: flex;
+  z-index: 4;
+  animation: fadeIn 0.5s ease 0s 1 normal forwards;
+}
+main #artlist .artist .art .description {
+  position: absolute;
+  visibility: hidden;
+  width: 70%;
+  height: 100%;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  display: none;
+  transition: display 0.8s;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 main #artlist .artist .art-details {
   display: flex;

@@ -46,8 +46,11 @@ body {
   list-style: none;
   padding: 0px 10px;
   font-family: "Gilroy";
-  font-size: 20px;
   font-weight: 600;
+  transition: font-size 0.5s;
+}
+.navlist li:hover {
+  font-size: 22px;
 }
 
 .navbar {
@@ -64,7 +67,8 @@ body {
 }
 
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
-  background: white;
+  background: transparent;
+  border: 1px solid white;
   opacity: 0.7;
 }
 
@@ -100,8 +104,22 @@ main #display .artwork {
   height: 100%;
   top: 0;
   left: 0;
-  filter: brightness(60%);
+  filter: brightness(0%);
   object-fit: cover;
+}
+main #display .fadeInBlack {
+  animation: fadeInBlack 3s ease 0s 1 normal forwards;
+}
+@keyframes fadeInBlack {
+  0% {
+    filter: brightness(0%);
+  }
+  70% {
+    filter: brightness(100%);
+  }
+  100% {
+    filter: brightness(40%);
+  }
 }
 main #display .attribution {
   position: absolute;
@@ -112,11 +130,11 @@ main #display .attribution {
 main #display .attribution .art_title {
   font-size: 80px;
   font-weight: 900;
-  font-family: "Gilroy Medium";
+  font-family: "Gilroy";
   color: white;
   line-height: 70px;
   letter-spacing: -0.04em;
-  text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.557);
+  text-shadow: 20px 20px 10px rgba(86, 85, 85, 0.546);
   margin-bottom: 40px;
   text-align: center;
 }
@@ -126,7 +144,7 @@ main #display .attribution .fade-in {
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  animation-delay: 1s;
+  animation-delay: 4s;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: forwards;
@@ -149,7 +167,7 @@ main #display .attribution h5 {
   font-family: "Gilroy";
   color: white;
   text-align: center;
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 900;
   margin-bottom: 40px;
 }
@@ -158,9 +176,41 @@ main #display .attribution .explore {
   background: transparent;
   border: 1px solid white;
   color: white;
+  cursor: pointer;
+  font-size: 22px;
   font-family: "Gilroy";
   display: block;
+  position: relative;
+  overflow: hidden;
   margin: 0 auto;
+  transition: all 0.5s;
+}
+main #display .attribution .explore::before, main #display .attribution .explore::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -2500;
+  transition: 0.5s ease-out;
+  background-color: white;
+}
+main #display .attribution .explore::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+main #display .attribution .explore:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+main #display .attribution .explore:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+main #display .attribution .explore:hover {
+  color: black;
 }
 
 #register {
@@ -172,6 +222,17 @@ main #display .attribution .explore {
   background-color: rgba(0, 0, 0, 0.6784313725);
   z-index: 15;
   display: none;
+}
+#register div.icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#register .x-icon {
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  color: white;
 }
 #register h2 {
   margin-bottom: 15px;
@@ -190,6 +251,11 @@ main #display .attribution .explore {
   outline: none;
   margin-bottom: 20px;
   width: 80%;
+  transition: border 1s;
+}
+#register input[type=text]:focus, #register input[type=email]:focus {
+  border: none;
+  border-bottom: 1px solid white;
 }
 #register .custom-select {
   position: relative;
@@ -232,7 +298,7 @@ main #display .attribution .explore {
 footer {
   padding: 70px;
   display: grid;
-  background: gold;
+  background: #1c1c1c;
   grid-template-columns: auto auto;
   position: fixed;
   bottom: 0;

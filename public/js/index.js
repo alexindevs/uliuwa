@@ -3,19 +3,19 @@
            const artistData = [
             {
               name: "Artist 1",
-              image: "art/Watcher_1.jpg",
+              image: "art/artbg.jpg",
               title: "WATCHER 1",
               description: "Olumide Onadipe",
             },
             {
               name: "Artist 2",
-              image: "art/Caretaker, Acrylic on canvas, 48 inches by 48 inches, 2019.jpg",
+              image: "art/artbg2.jpg",
               title: "CARETAKER",
               description: "Ogbemi Heymann",
             },
             {
               name: "Artist 3",
-              image: "art/Shadow of Self.png",
+              image: "art/artbg3.jpg",
               title: "SHADOW OF SELF",
               description: "Daniel Obiejesi",
             }
@@ -81,6 +81,11 @@
           const callback = (entries, observer) => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
+                const artworkElements = entry.target.querySelectorAll('.artwork');
+                artworkElements.forEach(artwork => {
+                artwork.classList.add('fadeInBlack');
+                });
+
                 const h2Elements = entry.target.querySelectorAll('h2');
                 h2Elements.forEach(h2 => {
                   h2.classList.add('fade-in');
@@ -174,24 +179,12 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     const registerForm = document.getElementById('register');
     registerForm.style.display = 'block';
-  }, 200000); // 60000 milliseconds = 1 minute
+  }, 20000);
 });
 
-window.addEventListener('load', () => {
-  const divElement = document.getElementById('your-div-id');
-  const footerElement = document.getElementById('your-footer-id');
-  
-  // Set initial height on page load
-  setDivHeight();
-
-  // Set the height whenever the window is resized
-  window.addEventListener('resize', setDivHeight);
-
-  function setDivHeight() {
-    const footerHeight = footerElement.offsetHeight;
-    divElement.style.height = `${footerHeight}px`;
-  }
-});
+function hideRegisterForm() {
+  document.getElementById('register').style.display = "none";
+}
 
 window.addEventListener('load', () => {
   const footerElement = document.querySelector('footer');
@@ -209,3 +202,4 @@ window.addEventListener('load', () => {
   }
 });
 
+document.querySelector(".x-icon").addEventListener("click", hideRegisterForm)

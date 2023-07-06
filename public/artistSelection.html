@@ -13,9 +13,9 @@
     <nav class="navbar">
         <h1 class="header" onclick="window.location.href = '/'">Uliuwa</h1>
         <ul class="navlist">
-            <li>Artists</li>
+            <li onclick="window.location.href = '/artists'">Artists</li>
             <li>Exhibitions</li>
-            <li>Store</li>
+            <!-- <li>Store</li> -->
             <li>About</li>
             <li onclick="window.location.href = '/contact'">Contact</li>
         </ul>
@@ -23,18 +23,31 @@
     <main>
         <h2>ARTISTS</h2>
         <section id="artlist">
+            <div class="artist fade-in-up" style="animation-delay: 0ms;" onclick="document.querySelector('.preloader').classList.add('fadeInBlack'); setTimeout(() => { window.location.href = '/artist'; }, 4000);">
+                <div class="art">
+                    <img src="art/Homeostasis.jpg" alt="Homeostasis by Daniel Obiejesi" class="artwork" id="my-art">
+                    <h2 class="description">Homeostasis by Daniel Obiejesi</h2>
+                </div>
+                <div class="art-details">
+                    <div class="text">
+                        <h4 class="art_title">Something</h4>
+                        <p class="location">Something else</p>
+                    </div>
+                </div>
+            </div>
             <!-- This will be generated automatically -->
         </section>
     </main>
     <footer>
         <div class="footer-left">
-            <div class="heading"><h4>Contact Us</h4>
-            <img class="icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-f.png" alt="facebook-f"/>
-            <img class="icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter--v1.png" alt="instagram-new--v1"/>
-            <img class="icon" src="https://img.icons8.com/windows/32/ffffff/instagram-new.png" alt="instagram-new"/>
-        </div>
-        <p>Address: 8c Room 4, Lekki phase 1, Lagos, Nigeria.</p>
-        <p>Email: contact@uliuwa.com</p>
+            <div class="heading">
+                <h4>Contact Us</h4>
+                <img class="icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-f.png" alt="facebook-f"/>
+                <img class="icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter--v1.png" alt="twitter--v1"/>
+                <img class="icon" src="https://img.icons8.com/windows/32/ffffff/instagram-new.png" alt="instagram-new"/>
+            </div>
+            <p>Address: 8c Room 4, Lekki phase 1, Lagos, Nigeria.</p>
+            <p>Email: contact@uliuwa.com</p>
         </div>
         <div class="footer-right">
             <h1 class="header" id="footer-header">Uliuwa</h1>

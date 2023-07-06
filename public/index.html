@@ -15,7 +15,7 @@
         <ul class="navlist">
             <li onclick="window.location.href = '/artists'">Artists</li>
             <li>Exhibitions</li>
-            <li>Store</li>
+            <!-- <li>Store</li> -->
             <li>About</li>
             <li onclick="window.location.href = '/contact'">Contact</li>
         </ul>
@@ -30,6 +30,7 @@
             </div>
         </section>
         <section id="register">
+          <div class="icon"><img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/ffffff/x.png" class="x-icon" alt="x"/></div>
             <h2>Welcome to Uliuwa</h2>
             <p>Signup for our community newsletters</p>
             <input type="text" name="fullName" id="fullName" placeholder="Enter your full name">
@@ -40,10 +41,12 @@
                 <div class="select-items">
                   <div class="select-item" data-value="Artist">Artist</div>
                   <div class="select-item" data-value="ArtManager">Art Manager</div>
+                  <div class="select-item" data-value="ArtEnthusiast">Art Enthusiast</div>
                 </div>
                 <select name="description" id="description" style="display: none;">
                   <option value="Artist">Artist</option>
                   <option value="ArtManager">Art Manager</option>
+                  <option value="ArtEnthusiast">Art Enthusiast</option>
                 </select>
               </div>
               <div class="custom-select">

@@ -12,7 +12,18 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/vendor', express.static('node_modules'));
 
+app.use((req, res, next) => {
+  // Set Cache-Control header
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  
+  // Set Pragma header
+  res.setHeader('Pragma', 'no-cache');
+  
+  // Set Expires header
+  res.setHeader('Expires', '0');
 
+  next();
+});
 
 // Routes
 app.get('/', (req, res) => {
