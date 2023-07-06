@@ -79,7 +79,7 @@ main > h2 {
   letter-spacing: -0.04em;
   margin-bottom: 75px;
   margin-left: 60px;
-  margin-top: 130px;
+  margin-top: 50px;
 }
 @keyframes fadeInUp {
   0% {
@@ -103,6 +103,7 @@ main .fade-in-up {
 main #artlist {
   display: flex;
   width: 90%;
+  row-gap: 40px;
   margin: auto;
   margin-bottom: 70px;
   flex-wrap: wrap;
@@ -218,6 +219,113 @@ footer .footer-right .navlist {
   margin-bottom: 30px;
   justify-content: flex-end;
   width: 100%;
+}
+
+@media (max-width: 1300px) {
+  main > h2 {
+    font-size: 50px;
+    font-weight: 900;
+    font-family: "Gilroy Medium";
+    color: black;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    margin-bottom: 75px;
+    margin-left: 60px;
+    margin-top: 30px;
+  }
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(-40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  main .fade-in-up {
+    opacity: 0;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  main #artlist {
+    display: flex;
+    width: 90%;
+    row-gap: 40px;
+    margin: auto;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main #artlist .artist {
+    flex-basis: 30;
+  }
+  main #artlist .artist .art {
+    position: relative;
+  }
+  main #artlist .artist .art .artwork {
+    width: 300px;
+    height: 250px;
+    transition: filter 0.5s;
+  }
+  main #artlist .artist .art:hover > .artwork {
+    filter: blur(2px) brightness(70%) grayscale(70%);
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  main #artlist .artist .art:hover .description {
+    display: flex;
+    z-index: 4;
+    animation: fadeIn 0.5s ease 0s 1 normal forwards;
+  }
+  main #artlist .artist .art .description {
+    position: absolute;
+    visibility: hidden;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    display: none;
+    transition: display 0.8s;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  main #artlist .artist .art-details {
+    display: flex;
+    gap: 20px;
+  }
+  main #artlist .artist .art-details .text {
+    margin-top: 10px;
+  }
+  main #artlist .artist .art-details .text .art_title {
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: "Gilroy Medium";
+  }
+  main #artlist .artist .art-details button {
+    color: white;
+    background-color: #1C1C1C;
+    width: 110px;
+    margin: 10PX;
+    height: 40px;
+    border: none;
+    font-weight: 700;
+  }
 }
 
 /*# sourceMappingURL=artistSelection.css.map */

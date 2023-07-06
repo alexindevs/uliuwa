@@ -163,9 +163,9 @@ $(document).ready(function() {
         const h4Element = entry.target.querySelector('.title');
   
         if (h1Element)
-          h1Element.classList.add('fade-in');
+          h1Element.classList.add('fadeInUp');
         if (h4Element)
-          h4Element.classList.add('fade-in');
+          h4Element.classList.add('fadeInUp');
       } else {
         const h1Element = entry.target.querySelector('.art-title');
         const h4Element = entry.target.querySelector('.title');
