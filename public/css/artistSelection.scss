@@ -116,12 +116,11 @@ main {
     }
     #artlist {
         display: flex;
-        gap: 60px;
         width: 90%;
         margin: auto;
         margin-bottom: 70px;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-between;
 
        .artist { 
         flex-basis: 30;
