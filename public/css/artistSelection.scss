@@ -63,20 +63,25 @@ body {
         list-style: none;
         padding: 0px 10px;
         font-family: 'Gilroy';
-        font-size: 20px;
         font-weight: 600;
+        transition: font-size 0.5s;
+
+        &:hover {
+            font-size: 22px;
+        }
     }
 }
 
 .navbar {
+    position: fixed;
     width: 100%;
     display: flex;
     z-index: 20;
     justify-content: space-between;
-    color: black;
+    color: white;
+
 
 }
-
 
 main {
 
