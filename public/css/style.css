@@ -298,7 +298,7 @@ main #display .attribution .explore:hover {
 footer {
   padding: 70px;
   display: grid;
-  background: gold;
+  background: #1c1c1c;
   grid-template-columns: auto auto;
   position: fixed;
   bottom: 0;
