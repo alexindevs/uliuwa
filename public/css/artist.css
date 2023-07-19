@@ -56,14 +56,15 @@ body {
   list-style: none;
   padding: 0px 10px;
   font-family: "Gilroy";
-  font-size: 20px;
   font-weight: 600;
+  transition: font-size 0.5s;
+}
+.navlist li:hover {
+  font-size: 22px;
 }
 
 .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
   width: 100%;
   display: flex;
   z-index: 20;
@@ -296,7 +297,7 @@ main #exhibitions #current {
   display: flex;
   overflow: hidden;
   position: relative;
-  height: 70vh;
+  height: 100vh;
 }
 main #exhibitions #current .exhibition {
   display: flex;
@@ -306,7 +307,9 @@ main #exhibitions #current .exhibition {
   align-items: center;
   justify-content: center;
   position: absolute;
-  transition: all 0.5s;
+  transition: opacity 0.5s, z-index 0.5s;
+  opacity: 0;
+  z-index: 1;
 }
 main #exhibitions #current .exhibition .exh-img {
   width: 40vw;

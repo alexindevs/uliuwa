@@ -77,11 +77,14 @@ function generateArtistHTML(data) {
 // Select all slides
 const slides = $(".exhibition");
 
-// Loop through slides and set each slide's translateX property to index * 100%
+// Loop through slides and set each slide's opacity and z-index
 slides.each(function(index) {
-  $(this).css("transform", `translateX(${index * 100}%)`);
+  const opacity = index === 0 ? 1 : 0; // First slide should be fully visible (opacity = 1)
+  $(this).css({
+    opacity: opacity,
+    "z-index": slides.length - index // Higher z-index for the first slide, lower for subsequent slides
+  });
 });
-
 
 // Select next slide button
 const nextSlide = $(".exh-icon.right");
@@ -100,12 +103,15 @@ nextSlide.on("click", function() {
     curSlide++;
   }
 
-  // Move slide by -100%
+  // Update the opacity and z-index of each slide
   slides.each(function(index) {
-    $(this).css("transform", `translateX(${100 * (index - curSlide)}%)`);
+    const opacity = index === curSlide ? 1 : 0; // Set opacity to 1 for the current slide, 0 for others
+    $(this).css({
+      opacity: opacity,
+      "z-index": slides.length - Math.abs(index - curSlide) // Higher z-index for the current slide, lower for others
+    });
   });
 });
-
 
 // Select previous slide button
 const prevSlide = $(".exh-icons .left");
@@ -119,9 +125,13 @@ prevSlide.on("click", function() {
     curSlide--;
   }
 
-  // Move slide by 100%
+  // Update the opacity and z-index of each slide
   slides.each(function(index) {
-    $(this).css("transform", `translateX(${100 * (index - curSlide)}%)`);
+    const opacity = index === curSlide ? 1 : 0; // Set opacity to 1 for the current slide, 0 for others
+    $(this).css({
+      opacity: opacity,
+      "z-index": slides.length - Math.abs(index - curSlide) // Higher z-index for the current slide, lower for others
+    });
   });
 });
 
