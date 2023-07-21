@@ -387,8 +387,8 @@ main #display .attribution .explore:hover {
   }
   main #register div.icon {
     position: relative;
-    width: 40%;
-    height: 40%;
+    width: 0;
+    height: 0;
   }
   main #register .x-icon {
     position: absolute;
