@@ -16,15 +16,31 @@
 </head>
 <body>
     <nav class="navbar">
-        <h1 class="header" onclick="window.location.href = '/'">Uliuwa</h1>
+        <img src="images/logo.png" class="logo" alt="">
         <ul class="navlist">
             <li onclick="window.location.href = '/artists'">Artists</li>
             <li>Exhibitions</li>
-            <!-- <li>Store</li> -->
             <li>About</li>
             <li onclick="window.location.href = '/contact'">Contact</li>
         </ul>
+        <div class="hamburger" onclick="toggleNavbar()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
     </nav>
+    <script>
+      function toggleNavbar() {
+  const navbar = document.querySelector('.navbar');
+  const navlist = document.querySelector('.navlist');
+  const hamburger = document.querySelector('.hamburger');
+
+  navbar.classList.toggle('active');
+  navlist.classList.toggle('active');
+  hamburger.classList.toggle('active');
+}
+
+    </script>
     <main>
         <section id="display">
             <div class="swiper">

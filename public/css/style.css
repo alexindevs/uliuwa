@@ -28,40 +28,117 @@ body {
 }
 
 .header {
-  margin-right: auto;
   font-size: 40px;
   font-family: "Gluten";
   font-weight: 700;
-  padding-top: 40px;
-  padding-left: 60px;
-}
-
-.navlist {
-  display: flex;
-  padding-top: 40px;
-  margin-right: 70px;
-  margin-left: auto;
-}
-.navlist li {
-  list-style: none;
-  padding: 0px 10px;
-  font-family: "Gilroy";
-  font-weight: 600;
-  transition: font-size 0.5s;
-}
-.navlist li:hover {
-  font-size: 22px;
 }
 
 .navbar {
   position: fixed;
   width: 100%;
   display: flex;
+  padding: 40px 60px;
   z-index: 20;
   justify-content: space-between;
   color: white;
 }
+.navbar .logo {
+  width: 150px;
+  height: 80px;
+}
+.navbar .navlist {
+  display: flex;
+  margin-right: 70px;
+}
+.navbar .navlist li {
+  list-style: none;
+  padding: 0px 10px;
+  font-family: "Gilroy";
+  font-weight: 600;
+  transition: font-size 0.5s;
+}
+.navbar .navlist li:hover {
+  font-size: 22px;
+}
+.navbar .hamburger {
+  width: 3.6rem;
+  height: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  line-height: 5rem;
+  z-index: 1500;
+  display: none;
+  margin-top: 20px;
+}
+.navbar .hamburger .line {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  display: block;
+  right: 0;
+  transition: all 650ms;
+}
+.navbar .hamburger .line:nth-child(1) {
+  top: 0;
+}
+.navbar .hamburger .line:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+}
+.navbar .hamburger .line:nth-child(3) {
+  top: 100%;
+  margin-top: -2px;
+}
+.navbar .hamburger.active .line:nth-child(1) {
+  transform: translateY(0.8rem) rotate(45deg);
+  width: 2rem;
+}
+.navbar .hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+.navbar .hamburger.active .line:nth-child(3) {
+  transform: translateY(-0.8rem) rotate(-45deg);
+  width: 2rem;
+}
 
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 40px 30px;
+    background-color: transparent;
+    top: 0;
+    width: 100%;
+  }
+  .navbar .navlist {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    position: fixed;
+    left: 0;
+    color: white;
+    gap: 40px;
+    bottom: -100vh;
+    transition: bottom 650ms;
+  }
+  .navbar .navlist li {
+    color: white;
+  }
+  .navbar .navlist.active {
+    bottom: 0;
+  }
+  .navbar .hamburger {
+    display: block;
+  }
+  .navbar .hamburger .line {
+    background-color: white;
+  }
+  .navbar .hamburger.active .line {
+    background-color: #fff;
+  }
+}
 :root {
   --swiper-theme-color: black;
 }
@@ -295,6 +372,31 @@ main #display .attribution .explore:hover {
   margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+  main #register {
+    position: fixed;
+    padding: 150px 50px 50px;
+    width: 100vw;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6784313725);
+    z-index: 15;
+  }
+  main #register div.icon {
+    position: relative;
+    width: 40%;
+    height: 40%;
+  }
+  main #register .x-icon {
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    color: white;
+  }
+}
 footer {
   padding: 70px;
   display: grid;
