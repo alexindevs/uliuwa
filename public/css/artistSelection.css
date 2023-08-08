@@ -1,20 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@700&family=Montserrat:wght@100;400&display=swap");
-@font-face {
-  font-family: "Archivo";
-  src: url("../fonts/Archivo-Light.otf") format("opentype");
-}
-@font-face {
-  font-family: "Archivo Bold";
-  src: url("../fonts/Archivo-ExtraBold.otf") format("opentype");
-}
-@font-face {
-  font-family: "Archivo Regular";
-  src: url("../fonts/Archivo-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Archivo Medium";
-  src: url("../fonts/Archivo-Medium.ttf") format("truetype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -39,47 +23,132 @@ body {
   color: black;
 }
 
-.header {
-  margin-right: auto;
-  font-size: 40px;
-  font-family: "Gluten";
-  font-weight: 700;
-  padding-top: 40px;
-  padding-left: 60px;
+.logo {
+  width: 130px;
+  height: 70px;
+  float: none;
 }
 
-.navlist {
-  display: flex;
-  padding-top: 40px;
-  margin-right: 70px;
-  margin-left: auto;
+@media (max-width: 600px) {
+  .logo {
+    width: 100px;
+    height: 60px;
+    float: none;
+  }
 }
-.navlist li {
-  list-style: none;
-  padding: 0px 10px;
-  font-family: "Archivo";
-  font-size: 20px;
-  font-weight: 600;
-}
-
 .navbar {
   width: 100%;
   display: flex;
-  z-index: 20;
+  padding: 40px 60px;
+  align-items: center;
   justify-content: space-between;
   color: black;
 }
+.navbar .navlist {
+  display: flex;
+  margin-right: 70px;
+}
+.navbar .navlist li {
+  list-style: none;
+  padding: 0px 10px;
+  font-family: "Archivo";
+  font-weight: 600;
+  transition: font-size 0.5s;
+}
+.navbar .navlist li:hover {
+  font-size: 22px;
+}
+.navbar .hamburger {
+  width: 3.6rem;
+  height: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  line-height: 4rem;
+  z-index: 3;
+  display: none;
+  margin-top: 20px;
+}
+.navbar .hamburger .line {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  display: block;
+  right: 0;
+  transition: all 650ms;
+}
+.navbar .hamburger .line:nth-child(1) {
+  top: 0;
+}
+.navbar .hamburger .line:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+}
+.navbar .hamburger .line:nth-child(3) {
+  top: 100%;
+  margin-top: -2px;
+}
+.navbar .hamburger.active .line:nth-child(1) {
+  transform: translateY(0.8rem) rotate(45deg);
+  width: 2rem;
+}
+.navbar .hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+.navbar .hamburger.active .line:nth-child(3) {
+  transform: translateY(-0.8rem) rotate(-45deg);
+  width: 2rem;
+}
 
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 40px 30px;
+    background-color: transparent;
+    top: 0;
+    width: 100%;
+  }
+  .navbar .navlist {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    position: fixed;
+    left: 0;
+    color: white;
+    gap: 40px;
+    bottom: -100vh;
+    transition: bottom 650ms;
+  }
+  .navbar .navlist li {
+    color: white;
+  }
+  .navbar .navlist.active {
+    bottom: 0;
+  }
+  .navbar .hamburger {
+    display: block;
+    width: 50px;
+    height: 25px;
+  }
+  .navbar .hamburger .line {
+    background-color: black;
+  }
+  .navbar .hamburger.active .line {
+    background-color: #fff;
+  }
+}
 main > h2 {
-  font-size: 80px;
-  font-weight: 900;
-  font-family: "Archivo Medium";
-  color: black;
-  line-height: 70px;
-  letter-spacing: -0.04em;
-  margin-bottom: 75px;
+  font-size: 65px;
+  font-weight: 800;
+  font-family: "Archivo";
+  color: rgb(28, 28, 28);
+  line-height: 65px;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
   margin-left: 60px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 @keyframes fadeInUp {
   0% {
@@ -110,14 +179,14 @@ main #artlist {
   justify-content: space-between;
 }
 main #artlist .artist {
-  flex-basis: 30;
+  flex-basis: 30%;
 }
 main #artlist .artist .art {
   position: relative;
 }
 main #artlist .artist .art .artwork {
-  width: 350px;
-  height: 300px;
+  width: 100%;
+  height: 400px;
   transition: filter 0.5s;
 }
 main #artlist .artist .art:hover > .artwork {
@@ -160,10 +229,10 @@ main #artlist .artist .art-details .text {
   margin-top: 10px;
 }
 main #artlist .artist .art-details .text .art_title {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 20px;
   text-transform: uppercase;
-  font-family: "Archivo Medium";
+  font-family: "Archivo";
 }
 main #artlist .artist .art-details button {
   color: white;
@@ -175,101 +244,35 @@ main #artlist .artist .art-details button {
   font-weight: 700;
 }
 
-footer {
-  padding: 70px;
-  display: grid;
-  background: #1C1C1C;
-  grid-template-columns: auto auto;
-  color: white !important;
-}
-footer .heading {
-  display: flex;
-  column-gap: 30px;
-}
-footer .heading h4 {
-  display: inline;
-  font-size: 40px;
-  color: white;
-  font-weight: 600;
-  font-family: "Archivo Medium";
-  margin-bottom: 30px;
-}
-footer .heading .icon {
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(52, 52, 52, 0.1803921569);
-  padding: 7px;
-}
-footer p {
-  margin-bottom: 30px;
-}
-footer .footer-right #footer-header {
-  display: block;
-  padding: 0px;
-  text-align: right;
-  margin-left: auto;
-}
-footer .footer-right p {
-  margin-bottom: 30px;
-  text-align: right;
-}
-footer .footer-right .navlist {
-  margin-right: 0px;
-  margin-bottom: 30px;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-@media (max-width: 1300px) {
+@media (max-width: 800px) {
   main > h2 {
-    font-size: 50px;
-    font-weight: 900;
-    font-family: "Archivo Medium";
-    color: black;
+    font-size: 55px;
+    font-weight: 800;
+    font-family: "Archivo";
+    color: rgb(28, 28, 28);
     line-height: 50px;
-    letter-spacing: -0.04em;
-    margin-bottom: 75px;
-    margin-left: 60px;
-    margin-top: 30px;
-  }
-  @keyframes fadeInUp {
-    0% {
-      transform: translateY(-40px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0px);
-      opacity: 1;
-    }
-  }
-  main .fade-in-up {
-    opacity: 0;
-    animation-name: fadeInUp;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-delay: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+    text-align: center;
+    margin-top: 0px;
   }
   main #artlist {
     display: flex;
+    flex-direction: column;
     width: 90%;
     row-gap: 40px;
     margin: auto;
     margin-bottom: 70px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
   main #artlist .artist {
-    flex-basis: 30;
+    width: 100%;
   }
   main #artlist .artist .art {
     position: relative;
   }
   main #artlist .artist .art .artwork {
-    width: 300px;
-    height: 250px;
+    height: 350px;
     transition: filter 0.5s;
   }
   main #artlist .artist .art:hover > .artwork {
@@ -312,10 +315,10 @@ footer .footer-right .navlist {
     margin-top: 10px;
   }
   main #artlist .artist .art-details .text .art_title {
-    font-weight: 900;
+    font-weight: 700;
     font-size: 20px;
     text-transform: uppercase;
-    font-family: "Archivo Medium";
+    font-family: "Archivo";
   }
   main #artlist .artist .art-details button {
     color: white;
@@ -325,6 +328,132 @@ footer .footer-right .navlist {
     height: 40px;
     border: none;
     font-weight: 700;
+  }
+}
+footer {
+  padding: 70px;
+  display: grid;
+  background: #1c1c1c;
+  grid-template-columns: auto auto;
+  width: 100%;
+  color: white;
+}
+footer .logo {
+  float: right;
+  margin-bottom: 40px;
+}
+footer hr {
+  width: 100%;
+  background-color: white;
+  margin: 0px auto 40px;
+  display: none;
+}
+footer .navlist {
+  display: flex;
+  margin-right: 70px;
+  margin-top: 30px;
+}
+footer .navlist li {
+  list-style: none;
+  padding: 0px 10px;
+  font-family: "Archivo";
+  font-weight: 600;
+  transition: font-size 0.5s;
+}
+footer .navlist li:hover {
+  font-size: 22px;
+}
+footer .footer-copy:nth-of-type(0) {
+  display: none;
+}
+footer .heading {
+  display: flex;
+  column-gap: 30px;
+}
+footer .heading h4 {
+  display: inline;
+  font-size: 40px;
+  color: white;
+  font-weight: 600;
+  font-family: "Archivo";
+  margin-bottom: 30px;
+}
+footer .heading .icon {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(52, 52, 52, 0.1803921569);
+  padding: 7px;
+}
+footer p {
+  margin-bottom: 30px;
+}
+footer .footer-right #footer-header {
+  display: block;
+  padding: 0px;
+  text-align: right;
+  margin-left: auto;
+}
+footer .footer-right p {
+  text-align: right;
+}
+footer .footer-right .navlist {
+  margin-right: 0px;
+  margin-bottom: 30px;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .logo {
+    float: none;
+    margin-bottom: 0px;
+  }
+  footer .heading {
+    display: flex;
+    column-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+  footer .footer-copy:nth-of-type(1) {
+    display: none;
+  }
+  footer p {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  footer .navlist {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .navlist li {
+    padding-bottom: 10px;
+  }
+  footer hr {
+    display: block;
+    height: 1px;
+  }
+  footer .footer-right {
+    text-align: center;
+  }
+  footer .footer-right #footer-header {
+    display: block;
+    padding: 0px;
+    text-align: center;
+    margin-left: auto;
+  }
+  footer .footer-right p {
+    margin-bottom: 30px;
+    text-align: center;
   }
 }
 

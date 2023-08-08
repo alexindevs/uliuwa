@@ -1,24 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&family=Montserrat:wght@100;400&display=swap');
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Light.otf') format('opentype'); 
-}
-
-@font-face {
-    font-family: 'Archivo Bold';
-    src: url('../fonts/Archivo-ExtraBold.otf') format('opentype'); 
-}
-
-@font-face {
-    font-family: 'Archivo Regular';
-    src: url('../fonts/Archivo-Regular.ttf') format('truetype'); 
-}
-
-@font-face {
-    font-family: 'Archivo Medium';
-    src: url('../fonts/Archivo-Medium.ttf') format('truetype'); 
-}
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -44,57 +24,160 @@ body {
     width: 100%;
     color: black;
 }
-.header {
-    margin-right: auto;
-    font-size: 40px;
-    font-family: "Gluten";
-    font-weight: 700;
-    padding-top: 40px;
-    padding-left: 60px;
-  }
+.logo {
+    width: 130px;
+    height: 70px;
+     float: none;
+}
 
-  .navlist {
-    display: flex;
-    padding-top: 40px;
-    margin-right: 70px;
-    margin-left: auto;
-
-    li {
-        list-style: none;
-        padding: 0px 10px;
-        font-family: 'Archivo';
-        font-weight: 600;
-        transition: font-size 0.5s;
-
-        &:hover {
-            font-size: 22px;
-        }
+@media (max-width: 600px) {
+    .logo {
+        width: 100px;
+        height: 60px;
+         float: none;
     }
 }
 
 .navbar {
-    position: fixed;
     width: 100%;
     display: flex;
-    z-index: 20;
+    padding: 40px 60px;
+    align-items: center;
     justify-content: space-between;
-    color: white;
+    color: black;
 
+
+    .navlist {
+        display: flex;
+        margin-right: 70px;
+    
+        li {
+            list-style: none;
+            padding: 0px 10px;
+            font-family: 'Archivo';
+            font-weight: 600;
+            transition: font-size 0.5s;
+    
+            &:hover {
+                font-size: 22px;
+            }
+        }
+    }
+
+    .hamburger {
+        width: 3.6rem;
+        height: 1.8rem;
+        position: relative;
+        cursor: pointer;
+        line-height: 4rem;
+        z-index: 3;
+        display: none;
+        margin-top: 20px;
+      }
+      
+      .hamburger .line {
+        width: 100%;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        display: block;
+        right: 0;
+        transition: all 650ms;
+      }
+      
+      .hamburger .line:nth-child(1) {
+        top: 0;
+      }
+      
+      .hamburger .line:nth-child(2) {
+        top: 50%;
+        margin-top: -1px;
+      }
+      
+      .hamburger .line:nth-child(3) {
+        top: 100%;
+        margin-top: -2px;
+      }
+      
+      .hamburger.active .line:nth-child(1) {
+        transform: translateY(.8rem) rotate(45deg);
+        width: 2rem;
+      }
+      
+      .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger.active .line:nth-child(3) {
+        transform: translateY(-.8rem) rotate(-45deg);
+        width: 2rem;
+      }
+      
 
 }
+
+@media screen and (max-width: 768px) {
+
+    .navbar {
+      padding: 40px 30px;
+      background-color: transparent;
+      top: 0;
+      width: 100%;
+
+      .navlist {
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        position: fixed;
+        left: 0;
+        color: white;
+        gap: 40px;
+        bottom: -100vh;
+        transition: bottom 650ms;
+
+        li {
+            color: white;
+        }
+
+    }
+  
+      .navlist.active {
+        bottom: 0;
+      }
+
+      .hamburger {
+        display: block;
+        width: 50px;
+        height: 25px;
+      }
+  
+      .hamburger .line {
+        background-color: black;
+      }
+  
+      .hamburger.active .line {
+        background-color: #fff;
+      }
+    }
+  
+      
+  }
 
 main {
 
     > h2 {
-    font-size: 80px;
-    font-weight: 900;
-    font-family: 'Archivo Medium';
-    color: black;
-    line-height: 70px;
-    letter-spacing: -0.04em;
-    margin-bottom: 75px;
-    margin-left: 60px;
-    margin-top: 50px;
+        font-size: 65px;
+        font-weight: 800;
+        font-family: 'Archivo';
+        color: rgb(28, 28, 28);
+        line-height: 65px;
+        letter-spacing: 4px;
+        margin-bottom: 40px;
+        margin-left: 60px;
+        margin-top: 40px;
 }
 
 @keyframes fadeInUp {
@@ -109,223 +192,135 @@ main {
     }
 }
 
-    .fade-in-up {
-        opacity: 0;
-        animation-name: fadeInUp;
-        animation-duration: 1s;
-        animation-timing-function: ease;
-        animation-delay: 2s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    
-    }
-    #artlist {
-        display: flex;
-        width: 90%;
-        row-gap: 40px;
-        margin: auto;
-        margin-bottom: 70px;
-        flex-wrap: wrap;
-        justify-content: space-between;
+.fade-in-up {
+    opacity: 0;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 
-       .artist { 
-        flex-basis: 30;
+}
+#artlist {
+    display: flex;
+    width: 90%;
+    row-gap: 40px;
+    margin: auto;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-        .art {
-            position: relative;
-            
-            .artwork {
-              width: 350px;
-              height: 300px;
-              transition: filter 0.5s;
-            }
-          
-            &:hover > .artwork {
-              filter: blur(2px) brightness(70%) grayscale(70%);
+    .artist { 
+    flex-basis: 30%;
+
+    .art {
+        position: relative;
+        
+        .artwork {
+            width: 100%;
+            height: 400px;
+            transition: filter 0.5s;
+        }
+        
+        &:hover > .artwork {
+            filter: blur(2px) brightness(70%) grayscale(70%);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
             }
 
-            @keyframes fadeIn {
-                0% {
-                    opacity: 0;
-                }
-
-                100% {
-                    opacity: 1;
-                    visibility: visible;
-                }
+            100% {
+                opacity: 1;
+                visibility: visible;
             }
-          
-            &:hover .description {
-              display: flex;
-              z-index: 4;
-              animation: fadeIn 0.5s ease 0s 1 normal forwards;
-            }
-          
-            .description {
-              position: absolute;
-              visibility: hidden;
-              width: 70%;
-              height: 100%;
-              align-items: center;
-              color: white;
-              font-size: 25px;
-              display: none;
-              transition: display 0.8s;
-              top: 0;
-              left: 50%;
-              transform: translateX(-50%);
-              text-align: center;
-            }
-          }
-
-        .art-details {
+        }
+        
+        &:hover .description {
             display: flex;
-            gap: 20px;
-
-        .text {
-            margin-top: 10px;
-
-            .art_title {
-                font-weight: 900;
-                font-size: 20px;
-                text-transform: uppercase;
-                font-family: 'Archivo Medium';
-            }
+            z-index: 4;
+            animation: fadeIn 0.5s ease 0s 1 normal forwards;
         }
-
-        button {
+        
+        .description {
+            position: absolute;
+            visibility: hidden;
+            width: 70%;
+            height: 100%;
+            align-items: center;
             color: white;
-            background-color: #1C1C1C;
-            width: 110px;
-            margin: 10PX;
-            height: 40px;
-            border: none;
-            font-weight: 700;
+            font-size: 25px;
+            display: none;
+            transition: display 0.8s;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
         }
-      } }
-    }
+        }
 
-}
-
-footer {
-    padding: 70px;
-    display: grid;
-    background: #1C1C1C;
-    grid-template-columns: auto auto;
-    color: white !important;
-
-    .heading {
+    .art-details {
         display: flex;
-        column-gap: 30px;
+        gap: 20px;
 
+    .text {
+        margin-top: 10px;
 
-    h4 {
-        display: inline;
-        font-size: 40px;
+        .art_title {
+            font-weight: 700;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: 'Archivo';
+        }
+    }
+
+    button {
         color: white;
-        font-weight: 600;
-        font-family: 'Archivo Medium';
-        margin-bottom: 30px;
-    }
-    
-
-
-    .icon {
-        border-radius: 100%;
-        width: 40px;
+        background-color: #1C1C1C;
+        width: 110px;
+        margin: 10PX;
         height: 40px;
-        background-color: #3434342e;
-        padding: 7px;
-    } 
- 
-}
-p {
-    margin-bottom: 30px;
-}
-
-
-.footer-right {
- #footer-header {
-        display: block;
-        padding: 0px;
-        text-align: right;
-        margin-left: auto;
+        border: none;
+        font-weight: 700;
     }
-    
-   p {
-        margin-bottom: 30px;
-        text-align: right;
-    }
-    
-    .navlist {
-        margin-right: 0px;
-        margin-bottom: 30px;
-        justify-content: flex-end;
-        width: 100%;
-    }
-
-    
+    } }
 }
-
-
 
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 800px) {
     main {
 
         > h2 {
-        font-size: 50px;
-        font-weight: 900;
-        font-family: 'Archivo Medium';
-        color: black;
+        font-size: 55px;
+        font-weight: 800;
+        font-family: 'Archivo';
+        color: rgb(28, 28, 28);
         line-height: 50px;
-        letter-spacing: -0.04em;
-        margin-bottom: 75px;
-        margin-left: 60px;
-        margin-top: 30px;
+        letter-spacing: 4px;
+        margin-bottom: 60px;
+        text-align: center;
+        margin-top: 0px;
     }
     
-    @keyframes fadeInUp {
-        0% {
-            transform: translateY(-40px);
-            opacity: 0;
-        }
-    
-        100% {
-            transform: translateY(0px);
-            opacity: 1;
-        }
-    }
-    
-        .fade-in-up {
-            opacity: 0;
-            animation-name: fadeInUp;
-            animation-duration: 1s;
-            animation-timing-function: ease;
-            animation-delay: 2s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-        
-        }
         #artlist {
             display: flex;
+            flex-direction: column;
             width: 90%;
             row-gap: 40px;
             margin: auto;
             margin-bottom: 70px;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
     
            .artist { 
-            flex-basis: 30;
-    
+            width: 100%;
             .art {
                 position: relative;
                 
                 .artwork {
-                  width: 300px;
-                  height: 250px;
+                  height: 350px;
                   transition: filter 0.5s;
                 }
               
@@ -375,10 +370,11 @@ p {
                 margin-top: 10px;
     
                 .art_title {
-                    font-weight: 900;
+                    font-weight: 700;
                     font-size: 20px;
                     text-transform: uppercase;
-                    font-family: 'Archivo Medium';
+                    font-family: 'Archivo';
+
                 }
             }
     
@@ -394,5 +390,167 @@ p {
           } }
         }
     
+    }
+}
+
+footer {
+    padding: 70px;
+    display: grid;
+    background: #1c1c1c;
+    grid-template-columns: auto auto;
+    width: 100%;
+    color: white;
+
+.logo {
+    float: right;
+    margin-bottom: 40px;
+}
+
+    hr {
+        width: 100%;
+        background-color: white;
+        margin: 0px auto 40px;
+        display: none;
+    }
+
+    .navlist {
+        display: flex;
+        margin-right: 70px;
+        margin-top: 30px;
+    
+        li {
+            list-style: none;
+            padding: 0px 10px;
+            font-family: 'Archivo';
+            font-weight: 600;
+            transition: font-size 0.5s;
+    
+            &:hover {
+                font-size: 22px;
+            }
+        }
+    }
+
+    .footer-copy:nth-of-type(0) {
+        display: none;
+    }
+
+    .heading {
+        display: flex;
+        column-gap: 30px;
+
+
+    h4 {
+        display: inline;
+        font-size: 40px;
+        color: white;
+        font-weight: 600;
+        font-family: 'Archivo';
+        margin-bottom: 30px;
+    }
+    
+
+
+    .icon {
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        background-color: #3434342e;
+        padding: 7px;
+    } 
+ 
+}
+p {
+    margin-bottom: 30px;
+}
+
+
+.footer-right {
+ #footer-header {
+        display: block;
+        padding: 0px;
+        text-align: right;
+        margin-left: auto;
+    }
+    
+   p {
+        text-align: right;
+    }
+    
+    .navlist {
+        margin-right: 0px;
+        margin-bottom: 30px;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    
+}
+
+
+
+}
+
+@media (max-width: 900px) {
+    footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            float: none;
+            margin-bottom: 0px;
+        }
+
+        .heading {
+            display: flex;
+            column-gap: 30px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            display: none;
+     
+    }
+
+    
+    .footer-copy:nth-of-type(1) {
+        display: none;
+    }
+    p {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+        .navlist {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            li {
+                padding-bottom: 10px;
+            }
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+        }
+
+        .footer-right {
+            text-align: center;
+
+            #footer-header {
+                display: block;
+                padding: 0px;
+                text-align: center;
+                margin-left: auto;
+            }
+            
+           p {
+                margin-bottom: 30px;
+                text-align: center;
+            } 
+        }
     }
 }
