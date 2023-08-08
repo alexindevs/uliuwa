@@ -179,7 +179,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     const registerForm = document.getElementById('register');
     registerForm.style.display = 'block';
-  }, 20000);
+  }, 5000);
 });
 
 function hideRegisterForm() {

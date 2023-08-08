@@ -50,41 +50,47 @@
               <div class="swiper-pagination"></div>
             </div>
         </section>
-        <section id="register">
-          <div class="icon"><img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/ffffff/x.png" class="x-icon" alt="x"/></div>
-            <h2>Welcome to Uliuwa</h2>
-            <p>Signup for our community newsletters</p>
-            <input type="text" name="fullName" id="fullName" placeholder="Enter your full name">
-            <input type="email" name="email" id="email" placeholder="enter your email">
-            <input type="text" name="interests" id="interests" placeholder="Your Interests (Please separate with commas)">
-            <div class="custom-select">
-                <div class="select-selected">What best describes you?</div>
-                <div class="select-items">
-                  <div class="select-item" data-value="Artist">Artist</div>
-                  <div class="select-item" data-value="ArtManager">Art Manager</div>
-                  <div class="select-item" data-value="ArtEnthusiast">Art Enthusiast</div>
-                </div>
-                <select name="description" id="description" style="display: none;">
-                  <option value="Artist">Artist</option>
-                  <option value="ArtManager">Art Manager</option>
-                  <option value="ArtEnthusiast">Art Enthusiast</option>
-                </select>
-              </div>
-              <div class="custom-select">
-                <div class="select-selected">Do you work in arts?</div>
-                <div class="select-items">
-                  <div class="select-item" data-value="Yes">Yes</div>
-                  <div class="select-item" data-value="No">No</div>
-                </div>
-                <select name="workInArts" id="workInArts" style="display: none;">
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </div>              
-            <button type="submit">Submit</button>
-            <p>By submitting this form, you're agreeing to our <a href="terms">terms and conditions.</a></p>
-        </section>  
     </main>
+    <section id="register">
+      <div class="header">
+        <img src="images/logo.png" class="logo" alt="">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="x-icon" viewBox="0 0 32 32">
+          <line x1="6" y1="6" x2="26" y2="26" stroke="white" stroke-width="3" />
+          <line x1="6" y1="26" x2="26" y2="6" stroke="white" stroke-width="3" />
+        </svg>            
+      </div>
+        <h2>Welcome to Uliuwa</h2>
+        <p>Sign up for updates on exhibitions, artists and events</p>
+        <input type="text" name="fullName" id="fullName" placeholder="Enter your full name">
+        <input type="email" name="email" id="email" placeholder="enter your email">
+        <input type="text" name="interests" id="interests" placeholder="Your Interests (Please separate with commas)">
+        <div class="custom-select">
+            <div class="select-selected">What best describes you?</div>
+            <div class="select-items">
+              <div class="select-item" data-value="Artist">Artist</div>
+              <div class="select-item" data-value="ArtManager">Art Manager</div>
+              <div class="select-item" data-value="ArtEnthusiast">Art Enthusiast</div>
+            </div>
+            <select name="description" id="description" style="display: none;">
+              <option value="Artist">Artist</option>
+              <option value="ArtManager">Art Manager</option>
+              <option value="ArtEnthusiast">Art Enthusiast</option>
+            </select>
+          </div>
+          <div class="custom-select">
+            <div class="select-selected">Do you work in arts?</div>
+            <div class="select-items">
+              <div class="select-item" data-value="Yes">Yes</div>
+              <div class="select-item" data-value="No">No</div>
+            </div>
+            <select name="workInArts" id="workInArts" style="display: none;">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>              
+        <button type="submit">Submit</button>
+        <p class="terms-notif">By submitting this form, you're agreeing to our <a href="terms">terms and conditions.</a></p>
+    </section>  
     <div class="after"></div>
     <footer>
         <div class="footer-left">
@@ -95,17 +101,19 @@
         </div>
         <p>Address: 8c Room 4, Lekki phase 1, Lagos, Nigeria.</p>
         <p>Email: contact@uliuwa.com</p>
+        <p class="footer-copy">&copy; Uliuwa 2023</p>
         </div>
+        <hr>
         <div class="footer-right">
-            <h1 class="header" id="footer-header">Uliuwa</h1>
-            <ul class="navlist">
+          <img src="images/logo.png" class="logo" alt="">
+          <ul class="navlist">
                 <li>Artists</li>
                 <li>Exhibitions</li>
                 <li>Store</li>
                 <li>About</li>
                 <li>Contact</li>
             </ul>
-            <p>&copy; Uliuwa 2023</p>
+            <p class="footer-copy">&copy; Uliuwa 2023</p>
         </div>
     </footer>
     <script src="js/index.js"></script>

@@ -2,30 +2,30 @@
 @import "animations.css";
 
 @font-face {
-    font-family: 'Gilroy';
-    src: url('../fonts/Gilroy-Light.otf') format('opentype'); 
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-Light.otf') format('opentype'); 
 }
 
 @font-face {
-    font-family: 'Gilroy Bold';
-    src: url('../fonts/Gilroy-ExtraBold.otf') format('opentype'); 
+    font-family: 'Archivo Bold';
+    src: url('../fonts/Archivo-ExtraBold.otf') format('opentype'); 
 }
 
 @font-face {
-    font-family: 'Gilroy Regular';
-    src: url('../fonts/Gilroy-Regular.ttf') format('truetype'); 
+    font-family: 'Archivo Regular';
+    src: url('../fonts/Archivo-Regular.ttf') format('truetype'); 
 }
 
 @font-face {
-    font-family: 'Gilroy Medium';
-    src: url('../fonts/Gilroy-Medium.ttf') format('truetype'); 
+    font-family: 'Archivo Medium';
+    src: url('../fonts/Archivo-Medium.ttf') format('truetype'); 
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gilroy';
+    font-family: 'Archivo';
 }
 
 body {
@@ -60,7 +60,7 @@ body {
     li {
         list-style: none;
         padding: 0px 10px;
-        font-family: 'Gilroy';
+        font-family: 'Archivo';
         font-weight: 600;
         transition: font-size 0.5s;
 
@@ -122,7 +122,7 @@ main {
             h1 {
                 font-size: 70px;
                 font-weight: 800;
-                font-family: 'Gilroy Medium';
+                font-family: 'Archivo Medium';
                 line-height: 70px;
                 text-transform: uppercase;
                 white-space: nowrap;
@@ -133,7 +133,7 @@ main {
             }
 
             h4 {
-                font-family: 'Gilroy';
+                font-family: 'Archivo';
                 color: white;
                 font-size: 19px;
                 font-weight: 700;
@@ -156,7 +156,7 @@ main {
             p {
                 color: white;
                 font-size: 35px;
-                font-family: Gilroy;
+                font-family: Archivo;
                 font-weight: 700;
                 line-height: 42px;
                 word-wrap: break-word;
@@ -168,7 +168,7 @@ main {
             p:first-of-type {
                 color: white;
                 font-size: 20px;
-                font-family: Gilroy;
+                font-family: Archivo;
                 font-weight: 700;
                 line-height: 30px;
                 letter-spacing: 0.40px;
@@ -178,7 +178,7 @@ main {
             p {
                 color: white;
                 font-size: 16px;
-                font-family: Gilroy;
+                font-family: Archivo;
                 font-weight: 700;
                 line-height: 24px;
             }
@@ -192,7 +192,7 @@ main {
         h2 {
             font-size: 80px;
             font-weight: 800;
-            font-family: 'Gilroy Medium';
+            font-family: 'Archivo Medium';
             line-height: 70px;
             color: black;
             text-transform: uppercase;
@@ -241,7 +241,7 @@ main {
                         font-weight: 900;
                         font-size: 20px;
                         text-transform: uppercase;
-                        font-family: 'Gilroy Medium';
+                        font-family: 'Archivo Medium';
                     }
                 }
         
@@ -265,7 +265,7 @@ main {
         h2 {
             font-size: 80px;
             font-weight: 800;
-            font-family: 'Gilroy Medium';
+            font-family: 'Archivo Medium';
             line-height: 70px;
             color: white;
             text-transform: uppercase;
@@ -279,7 +279,7 @@ main {
         p {
             color: white;
             font-size: 20px;
-            font-family: Gilroy;
+            font-family: Archivo;
             font-weight: 700;
             line-height: 30px;
             letter-spacing: 0.40px;
@@ -294,7 +294,7 @@ main {
         >h2 {
             font-size: 80px;
             font-weight: 800;
-            font-family: 'Gilroy Bold';
+            font-family: 'Archivo Bold';
             line-height: 70px;
             color: #1C1C1C;
             text-transform: uppercase;
@@ -314,7 +314,7 @@ main {
                 margin-right: 50px;
                 color: #1C1C1C;
                 font-size: 25px;
-                font-family: 'Gilroy';
+                font-family: 'Archivo';
                 text-transform: uppercase;
                 line-height: 30px;
                 word-wrap: break-word;
@@ -384,7 +384,7 @@ main {
                   h2 {
                     font-size: 65px;
                     font-weight: 800;
-                    font-family: 'Gilroy Bold';
+                    font-family: 'Archivo Bold';
                     color: #1C1C1C;
                     text-transform: capitalize;
                     white-space: nowrap;
@@ -485,7 +485,7 @@ footer {
         font-size: 40px;
         color: white;
         font-weight: 600;
-        font-family: 'Gilroy Medium';
+        font-family: 'Archivo Medium';
         margin-bottom: 30px;
     }
     
