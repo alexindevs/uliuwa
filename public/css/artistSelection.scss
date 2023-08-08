@@ -70,7 +70,7 @@ body {
         position: relative;
         cursor: pointer;
         line-height: 4rem;
-        z-index: 3;
+        z-index: 7;
         display: none;
         margin-top: 20px;
       }
@@ -132,6 +132,7 @@ body {
         align-items: center;
         background: black;
         position: fixed;
+        z-index: 6;
         left: 0;
         color: white;
         gap: 40px;
@@ -216,6 +217,7 @@ main {
 
     .art {
         position: relative;
+        z-index: -1;
         
         .artwork {
             width: 100%;
@@ -302,6 +304,7 @@ main {
         letter-spacing: 4px;
         margin-bottom: 60px;
         text-align: center;
+        margin-left: 0px;
         margin-top: 0px;
     }
     
