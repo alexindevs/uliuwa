@@ -141,7 +141,7 @@ body {
 main #hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 97vh;
 }
 main #hero::after {
   content: "";
@@ -165,22 +165,21 @@ main #hero .banner {
 }
 main #hero .text {
   color: white;
+  top: 80%;
+  left: 20%;
+  position: absolute;
+  transform: translate(-20%, -80%);
 }
 main #hero .text h1 {
   font-size: 80px;
   font-weight: 800;
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  transform: translate(-20%, -50%);
   font-family: "Archivo";
   line-height: 90px;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: wrap;
   letter-spacing: 6px;
   text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.557);
   margin-bottom: 20px;
-  text-align: center;
 }
 main #hero .text h4 {
   font-family: "Archivo";
@@ -189,13 +188,10 @@ main #hero .text h4 {
   font-weight: 700;
 }
 main #hero .text p {
-  position: absolute;
-  top: 90%;
-  left: 20%;
-  transform: translate(-20%, -90%);
   font-size: 20px;
   font-weight: 300;
   width: 60%;
+  margin-top: 30%;
   text-shadow: 2px 2px 1px black;
   color: white;
 }
@@ -244,7 +240,7 @@ main #about {
   display: grid;
   grid-template-columns: auto auto;
   background-color: #1C1C1C;
-  padding: 90px 60px;
+  padding: 90px 90px;
   gap: 40px;
 }
 main #about .left p {
@@ -425,16 +421,20 @@ main #biography p {
   letter-spacing: 0.4px;
   word-wrap: break-word;
 }
+main #biography button {
+  color: black;
+  background-color: rgb(210, 210, 210);
+}
 @media (max-width: 800px) {
   main #biography {
     background-color: #1C1C1C;
     padding: 50px 40px;
   }
   main #biography h2 {
-    font-size: 50px;
+    font-size: 2.6rem;
     font-weight: 800;
     font-family: "Archivo";
-    line-height: 70px;
+    line-height: 50px;
     color: white;
     text-transform: uppercase;
     white-space: nowrap;
@@ -463,7 +463,7 @@ main #exhibitions > h2 {
   color: #1C1C1C;
   text-transform: uppercase;
   white-space: nowrap;
-  letter-spacing: -0.01em;
+  letter-spacing: 4px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -603,8 +603,66 @@ main #exhibitions #upcoming .upcoming-exhibition .text > *:nth-child(n) {
   padding-bottom: 10px;
 }
 @media (max-width: 800px) {
+  main #exhibitions {
+    padding: 40px 30px;
+  }
   main #exhibitions h2 {
-    font-size: 50px;
+    font-size: 40px;
+    margin: auto;
+  }
+  main #exhibitions .links {
+    display: block;
+    margin: 10px auto;
+    color: #1C1C1C;
+    width: max-content;
+  }
+  main #exhibitions .links a {
+    margin-right: 20px;
+    color: #1C1C1C;
+    font-size: 16px;
+    font-family: "Archivo";
+    text-transform: uppercase;
+    line-height: 30px;
+    word-wrap: break-word;
+  }
+  main #exhibitions #current .exhibition {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 50px 0px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: opacity 0.5s, z-index 0.5s;
+  }
+  main #exhibitions #current .exhibition .exh-img {
+    width: 100%;
+    height: 100%;
+  }
+  main #exhibitions #current .exhibition .text {
+    width: 100%;
+  }
+  main #exhibitions #current .exhibition .text h2 {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: "Archivo";
+    color: #1C1C1C;
+    text-transform: capitalize;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+  main #exhibitions #current .exhibition .text .exh-date {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  main #exhibitions #current .exhibition .text .description {
+    margin: 30px 0px;
+    font-size: 20px;
+  }
+  main #exhibitions #current .exhibition .text .exh-icon.left {
+    margin-right: 35px;
   }
 }
 

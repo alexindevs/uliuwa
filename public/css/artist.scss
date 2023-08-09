@@ -169,7 +169,7 @@ main {
     #hero {
         position: relative;
         width: 100%;
-        height: 100vh;
+        height: 97vh;
           
         &::after {
             content: '';
@@ -197,22 +197,21 @@ main {
         
         .text {
             color: white;
+            top: 80%;
+            left: 20%;
+            position: absolute;
+            transform: translate(-20%, -80%);
 
             h1 {
                 font-size: 80px;
                 font-weight: 800;
-                position: absolute;
-                top: 50%;
-                left: 20%;
-                transform: translate(-20%, -50%);
                 font-family: 'Archivo';
                 line-height: 90px;
                 text-transform: uppercase;
-                white-space: nowrap;
+                white-space: wrap;
                 letter-spacing: 6px;
                 text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.557);
                 margin-bottom: 20px;
-                text-align: center;
             }
 
             h4 {
@@ -223,13 +222,10 @@ main {
             }
 
             p {
-                position: absolute;
-                top: 90%;
-                left: 20%;
-                transform: translate(-20%, -90%);
                 font-size: 20px;
                 font-weight: 300;
                 width: 60%;
+                margin-top: 30%;
                 text-shadow: 2px 2px 1px black;
                 color: white;
             }
@@ -291,7 +287,7 @@ main {
         display: grid;
         grid-template-columns: auto auto;
         background-color: #1C1C1C;
-        padding: 90px 60px;
+        padding: 90px 90px;
         gap: 40px;
 
         .left {
@@ -511,6 +507,11 @@ main {
             letter-spacing: 0.40px;
             word-wrap: break-word
         }
+
+        button {
+            color: black;
+            background-color: rgb(210, 210, 210);
+        }
     }
 
     @media (max-width: 800px) {
@@ -519,10 +520,10 @@ main {
             padding: 50px 40px;
             
             h2 {
-                font-size: 50px;
+                font-size: 2.6rem;
                 font-weight: 800;
                 font-family: 'Archivo';
-                line-height: 70px;
+                line-height: 50px;
                 color: white;
                 text-transform: uppercase;
                 white-space: nowrap;
@@ -556,7 +557,7 @@ main {
             color: #1C1C1C;
             text-transform: uppercase;
             white-space: nowrap;
-            letter-spacing: -0.01em;
+            letter-spacing: 4px;
             margin-bottom: 40px;
             text-align: center;
         }
@@ -725,8 +726,76 @@ main {
 
     @media (max-width: 800px) {
         #exhibitions {
+            padding: 40px 30px;
             h2 {
-                font-size: 50px;
+                font-size: 40px;
+                margin: auto;
+            }
+
+            .links {
+                display: block;
+                margin: 10px auto;
+                color: #1C1C1C;
+                width: max-content;
+    
+                a {
+                    margin-right: 20px;
+                    color: #1C1C1C;
+                    font-size: 16px;
+                    font-family: 'Archivo';
+                    text-transform: uppercase;
+                    line-height: 30px;
+                    word-wrap: break-word;
+                }
+            
+            }
+
+            #current {
+                .exhibition {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+                    margin: 50px 0px;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    transition: opacity 0.5s, z-index 0.5s;
+
+                    .exh-img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .text {
+                        width: 100%;
+                    
+                        h2 {
+                          font-size: 30px;
+                          font-weight: 800;
+                          font-family: 'Archivo';
+                          color: #1C1C1C;
+                          text-transform: capitalize;
+                          white-space: nowrap;
+                          letter-spacing: 2px;
+                          margin-bottom: 25px;
+                        }
+                    
+                        .exh-date {
+                          font-size: 25px;
+                          margin-bottom: 10px;
+                        }
+                    
+                        .description {
+                          margin: 30px 0px;
+                          font-size: 20px;
+                        }
+                    
+                        .exh-icon.left {
+                          margin-right: 35px;
+                        }
+                      }
+                }
             }
         }
     }
