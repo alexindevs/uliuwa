@@ -6,6 +6,21 @@ const artistData = [
     year: 2021,
     title: 'Watcher 1'
   },
+  
+  {
+    imageSrc: 'art/olumide (40).jpg',
+    alt: 'Room Mates 4',
+    name: 'Ogbemi Heymann',
+    year: 2013,
+    title: 'Room Mates 4'
+  },
+  {
+    imageSrc: 'art/olumide (24).jpg',
+    alt: 'Room Mates 4',
+    name: 'Ogbemi Heymann',
+    year: 2013,
+    title: 'Room Mates 4'
+  },
   {
     imageSrc: 'art/Desire III, Acrylic on canvas, 42in x 36in 2022.jpg',
     alt: 'Elation',
@@ -14,12 +29,19 @@ const artistData = [
     title: 'Desire III, Acrylic on canvas, 42in x 36in 2022.jpg'
   },
   {
-    imageSrc: 'art/Room Mates 4, Acrylic on canvas, 42 inches by 42 inches, 2013.jpg',
+    imageSrc: 'art/olumide (19).jpg',
     alt: 'Room Mates 4',
     name: 'Ogbemi Heymann',
     year: 2013,
     title: 'Room Mates 4'
-  }
+  },
+  {
+    imageSrc: 'art/Circle of friends, Acrylic on canvas, 36in x 42in, 2022.jpg',
+    alt: 'Room Mates 4',
+    name: 'Ogbemi Heymann',
+    year: 2013,
+    title: 'Room Mates 4'
+  },
 ];
 
 function generateArtistHTML(data) {
@@ -29,11 +51,7 @@ function generateArtistHTML(data) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const artistDiv = entry.target;
-        const index = $(artistDiv).index();
-
         $(artistDiv).addClass('fadeInUp');
-        $(artistDiv).css('animation-delay', `${index * 400}ms`);
-
         observer.unobserve(artistDiv);
       }
     });
@@ -42,11 +60,17 @@ function generateArtistHTML(data) {
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1
+    threshold: 0.1,
   };
 
   const observer = new IntersectionObserver(callback, options);
 
+  // Create three columns
+  const numColumns = 3;
+  const columns = Array.from({ length: numColumns }, () => $('<div>').addClass('art-column'));
+  columns.forEach(column => artList.append(column));
+
+  // Distribute artist items into columns
   data.forEach(artist => {
     const artistDiv = $('<div>').addClass('artist');
     const image = $('<img>').attr('src', artist.imageSrc).attr('alt', artist.alt).addClass('artwork');
@@ -64,12 +88,17 @@ function generateArtistHTML(data) {
     artDetails.append(enquireButton);
     artistDiv.append(image);
     artistDiv.append(artDetails);
-    artList.append(artistDiv);
+
+    // Distribute artistDiv into columns
+    const columnIndex = data.indexOf(artist) % numColumns;
+    columns[columnIndex].append(artistDiv);
 
     observer.observe(artistDiv[0]);
   });
-
 }
+
+
+
 
 
 // JavaScript for Exhibition Slider
@@ -162,8 +191,6 @@ function toggleExhibitions(element) {
 
 
 $(document).ready(function() {
-  generateArtistHTML(artistData);
-  generateArtistHTML(artistData);
   generateArtistHTML(artistData);
 
   const callback = (entries, observer) => {

@@ -1,21 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@700&family=Montserrat:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 @import "animations.css";
-@font-face {
-  font-family: "Archivo";
-  src: url("../fonts/Archivo-Light.otf") format("opentype");
-}
-@font-face {
-  font-family: "Archivo Bold";
-  src: url("../fonts/Archivo-ExtraBold.otf") format("opentype");
-}
-@font-face {
-  font-family: "Archivo Regular";
-  src: url("../fonts/Archivo-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Archivo Medium";
-  src: url("../fonts/Archivo-Medium.ttf") format("truetype");
-}
 * {
   margin: 0;
   padding: 0;
@@ -167,7 +151,7 @@ main #hero::after {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.716), transparent);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.461), transparent);
   display: block;
 }
 main #hero .banner {
@@ -180,21 +164,20 @@ main #hero .banner {
   z-index: -2;
 }
 main #hero .text {
-  position: absolute;
-  top: 80%;
-  left: 85%;
-  transform: translate(-85%, -80%);
   color: white;
-  text-align: end;
 }
 main #hero .text h1 {
-  font-size: 70px;
+  font-size: 80px;
   font-weight: 800;
-  font-family: "Archivo Medium";
-  line-height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-20%, -50%);
+  font-family: "Archivo";
+  line-height: 90px;
   text-transform: uppercase;
   white-space: nowrap;
-  letter-spacing: -0.01em;
+  letter-spacing: 6px;
   text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.557);
   margin-bottom: 20px;
   text-align: center;
@@ -205,8 +188,57 @@ main #hero .text h4 {
   font-size: 19px;
   font-weight: 700;
 }
+main #hero .text p {
+  position: absolute;
+  top: 90%;
+  left: 20%;
+  transform: translate(-20%, -90%);
+  font-size: 20px;
+  font-weight: 300;
+  width: 60%;
+  text-shadow: 2px 2px 1px black;
+  color: white;
+}
 main #hero .text .exh-icons {
   margin-top: 25px;
+}
+@media (max-width: 800px) {
+  main #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  main #hero::after {
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.27) 100%);
+    display: block;
+  }
+  main #hero .text {
+    color: white;
+  }
+  main #hero .text h1 {
+    font-size: 40px;
+    font-weight: 800;
+    top: 50%;
+    left: 15%;
+    transform: translate(-15%, -50%);
+    line-height: 43px;
+    white-space: wrap;
+  }
+  main #hero .text p {
+    font-size: 16px;
+    font-weight: 300;
+    width: 80%;
+    transform: translate(-10%, -50%);
+    text-shadow: none;
+    color: white;
+  }
 }
 main #about {
   display: grid;
@@ -218,16 +250,16 @@ main #about {
 main #about .left p {
   color: white;
   font-size: 35px;
-  font-family: Archivo;
-  font-weight: 700;
+  font-family: "Archivo";
+  font-weight: 600;
   line-height: 42px;
   word-wrap: break-word;
 }
 main #about .right p:first-of-type {
   color: white;
   font-size: 20px;
-  font-family: Archivo;
-  font-weight: 700;
+  font-family: "Archivo";
+  font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.4px;
   word-wrap: break-word;
@@ -235,9 +267,43 @@ main #about .right p:first-of-type {
 main #about .right p {
   color: white;
   font-size: 16px;
-  font-family: Archivo;
-  font-weight: 700;
+  font-family: "Archivo";
+  font-weight: 400;
   line-height: 24px;
+}
+@media (max-width: 800px) {
+  main #about {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: #1C1C1C;
+    padding: 40px 40px;
+    gap: 40px;
+  }
+  main #about .left p {
+    color: white;
+    font-size: 30px;
+    font-family: "Archivo";
+    font-weight: 600;
+    line-height: 32px;
+    word-wrap: break-word;
+  }
+  main #about .right p:first-of-type {
+    color: white;
+    font-size: 18px;
+    font-family: Archivo;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.4px;
+    word-wrap: break-word;
+  }
+  main #about .right p {
+    color: white;
+    font-size: 18px;
+    font-family: Archivo;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    line-height: 30px;
+  }
 }
 main #artworks {
   background-color: white;
@@ -246,28 +312,35 @@ main #artworks {
 main #artworks h2 {
   font-size: 80px;
   font-weight: 800;
-  font-family: "Archivo Medium";
+  font-family: "Archivo";
   line-height: 70px;
+  text-align: left;
   color: black;
   text-transform: uppercase;
   white-space: nowrap;
+  margin-left: 60px;
   letter-spacing: -0.01em;
   margin-bottom: 20px;
 }
 main #artworks #artlist {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: auto auto auto;
+  margin: 60px;
+}
+main #artworks #artlist .art-column {
   display: flex;
-  gap: 60px;
-  margin-bottom: 70px;
-  flex-wrap: wrap;
-  padding: 40px 0px;
-  justify-content: space-around;
+  flex-direction: column;
 }
 main #artworks #artlist .artwork {
-  width: 25vw;
-  height: 300px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 main #artworks #artlist .artist {
   flex-basis: 30%;
+  margin-bottom: 20px;
+  flex-direction: column;
 }
 main #artworks #artlist .artist .art-details {
   display: flex;
@@ -286,7 +359,7 @@ main #artworks #artlist .artist .art-details .text .art_title {
   font-weight: 900;
   font-size: 20px;
   text-transform: uppercase;
-  font-family: "Archivo Medium";
+  font-family: "Archivo";
 }
 main #artworks #artlist .artist .art-details button {
   color: white;
@@ -296,6 +369,37 @@ main #artworks #artlist .artist .art-details button {
   height: 40px;
   border: none;
   font-weight: 700;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  main #artworks {
+    background-color: white;
+    padding: 40px 10px;
+  }
+  main #artworks h2 {
+    font-size: 50px;
+    font-weight: 800;
+    font-family: "Archivo";
+    line-height: 70px;
+    color: black;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-left: 0px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  main #artworks #artlist {
+    display: flex;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: auto;
+    padding: 40px 0px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 20px auto;
+  }
 }
 main #biography {
   background-color: #1C1C1C;
@@ -304,7 +408,7 @@ main #biography {
 main #biography h2 {
   font-size: 80px;
   font-weight: 800;
-  font-family: "Archivo Medium";
+  font-family: "Archivo";
   line-height: 70px;
   color: white;
   text-transform: uppercase;
@@ -321,6 +425,32 @@ main #biography p {
   letter-spacing: 0.4px;
   word-wrap: break-word;
 }
+@media (max-width: 800px) {
+  main #biography {
+    background-color: #1C1C1C;
+    padding: 50px 40px;
+  }
+  main #biography h2 {
+    font-size: 50px;
+    font-weight: 800;
+    font-family: "Archivo";
+    line-height: 70px;
+    color: white;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+  }
+  main #biography p {
+    color: white;
+    font-size: 16px;
+    font-family: "Archivo";
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.4px;
+    word-wrap: break-word;
+  }
+}
 main #exhibitions {
   background-color: #ffffff;
   padding: 90px 60px;
@@ -328,7 +458,7 @@ main #exhibitions {
 main #exhibitions > h2 {
   font-size: 80px;
   font-weight: 800;
-  font-family: "Archivo Bold";
+  font-family: "Archivo";
   line-height: 70px;
   color: #1C1C1C;
   text-transform: uppercase;
@@ -407,7 +537,7 @@ main #exhibitions #current .exhibition .text {
 main #exhibitions #current .exhibition .text h2 {
   font-size: 65px;
   font-weight: 800;
-  font-family: "Archivo Bold";
+  font-family: "Archivo";
   color: #1C1C1C;
   text-transform: capitalize;
   white-space: nowrap;
@@ -472,15 +602,21 @@ main #exhibitions #upcoming .upcoming-exhibition .exh-img {
 main #exhibitions #upcoming .upcoming-exhibition .text > *:nth-child(n) {
   padding-bottom: 10px;
 }
+@media (max-width: 800px) {
+  main #exhibitions h2 {
+    font-size: 50px;
+  }
+}
 
 footer {
   padding: 70px;
   display: grid;
   background: #1c1c1c;
   grid-template-columns: auto auto;
-  position: fixed;
+  position: static;
   bottom: 0;
   width: 100%;
+  color: white;
   z-index: -1;
 }
 footer .logo {
