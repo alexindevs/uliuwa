@@ -30,6 +30,10 @@ app.get('/artists', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'artistSelection.html'));
 });
 
+app.get('/about-us', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
 app.get('/artist', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'artist.html'));
 });

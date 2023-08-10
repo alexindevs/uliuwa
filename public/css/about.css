@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import "animations.css";
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +7,19 @@
   font-family: "Archivo";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   color: black;
+  scroll-behavior: smooth;
 }
 
 .logo {
-  width: 130px;
-  height: 70px;
+  width: 150px;
+  height: 80px;
   float: none;
 }
 
@@ -25,19 +31,19 @@ body {
   }
 }
 .navbar {
+  position: absolute;
   width: 100%;
   display: flex;
   padding: 40px 60px;
-  align-items: center;
+  z-index: 4 !important;
   justify-content: space-between;
-  color: black;
+  color: white;
+  align-items: center;
 }
-
 .navbar .navlist {
   display: flex;
   margin-right: 70px;
 }
-
 .navbar .navlist li {
   list-style: none;
   padding: 0px 10px;
@@ -45,55 +51,46 @@ body {
   font-weight: 600;
   transition: font-size 0.5s;
 }
-
 .navbar .navlist li:hover {
   font-size: 22px;
 }
-
 .navbar .hamburger {
   width: 3.6rem;
   height: 1.8rem;
   position: relative;
   cursor: pointer;
   line-height: 4rem;
-  z-index: 7;
+  z-index: 3;
   display: none;
   margin-top: 20px;
 }
-
 .navbar .hamburger .line {
   width: 100%;
   height: 2px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   position: absolute;
   display: block;
   right: 0;
   transition: all 650ms;
 }
-
 .navbar .hamburger .line:nth-child(1) {
   top: 0;
 }
-
 .navbar .hamburger .line:nth-child(2) {
   top: 50%;
   margin-top: -1px;
 }
-
 .navbar .hamburger .line:nth-child(3) {
   top: 100%;
   margin-top: -2px;
 }
-
 .navbar .hamburger.active .line:nth-child(1) {
   transform: translateY(0.8rem) rotate(45deg);
   width: 2rem;
 }
-
 .navbar .hamburger.active .line:nth-child(2) {
   opacity: 0;
 }
-
 .navbar .hamburger.active .line:nth-child(3) {
   transform: translateY(-0.8rem) rotate(-45deg);
   width: 2rem;
@@ -101,7 +98,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 40px 30px;
+    padding: 40px 20px;
     background-color: transparent;
     top: 0;
     width: 100%;
@@ -114,7 +111,6 @@ body {
     align-items: center;
     background: black;
     position: fixed;
-    z-index: 6;
     left: 0;
     color: white;
     gap: 40px;
@@ -133,150 +129,123 @@ body {
     height: 25px;
   }
   .navbar .hamburger .line {
-    background-color: black;
+    background-color: white;
   }
   .navbar .hamburger.active .line {
     background-color: #fff;
   }
 }
-main #contact {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 40px 80px;
-  gap: 50px;
-}
-main #contact hr {
-  display: none;
-}
-main #contact .left {
-  flex-basis: 50%;
-  text-align: left;
-}
-main #contact .left .heading {
-  font-size: 80px;
-  font-weight: 0;
-  font-family: "Archivo";
-  color: black;
-  line-height: 70px;
-  letter-spacing: 4px;
-  margin-bottom: 35px;
-  margin-top: 40px;
-}
-main #contact .left .heading:first-of-type {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-main #contact .left a {
-  color: black;
-  text-transform: capitalize;
-  text-decoration-line: underline;
-  text-decoration-color: black;
-  display: block;
-  padding-bottom: 20px;
-}
-main #contact .right {
-  flex-basis: 50%;
-  padding-top: 0px;
-  text-align: left;
-}
-main #contact .right input[type=text], main #contact .right input[type=email], main #contact .right input[type=tel], main #contact .right textarea {
-  background-color: rgb(238, 236, 236);
-  padding: 15px;
-  display: block;
-  border: none;
-  width: 100%;
-  margin-bottom: 35px;
-}
-main #contact .right label {
-  display: block;
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-main #contact .right .custom-select {
+main #hero {
   position: relative;
-  display: inline-block;
   width: 100%;
-  margin-bottom: 35px;
+  height: 97vh;
 }
-main #contact .right .custom-select .select-trigger {
-  background-color: rgb(238, 236, 236);
-  padding: 15px;
-  display: block;
-  border: none;
-  cursor: pointer;
-}
-main #contact .right .custom-select .arrow {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 4px 0 4px;
-  border-color: #000 transparent transparent transparent;
-}
-main #contact .right .custom-select .selected-option {
-  display: inline-block;
-}
-main #contact .right .custom-select .select-options {
-  position: absolute;
-  top: 100%;
+main #hero::after {
+  content: "";
+  top: 0;
   left: 0;
+  z-index: -1;
+  position: absolute;
   width: 100%;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  background-color: rgb(238, 236, 236);
-  display: none;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.461), transparent);
+  display: block;
 }
-main #contact .right .custom-select .option {
-  padding: 10px;
-  cursor: pointer;
-}
-main #contact .right #serviceType {
+main #hero .banner {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  opacity: 0;
-  pointer-events: none;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
 }
-main #contact .right input[type=submit] {
-  background-color: rgb(0, 0, 0);
-  border: none;
-  height: 30px;
+main #hero .text {
   color: white;
-  width: 100%;
-  margin-bottom: 35px;
+  top: 80%;
+  left: 20%;
+  position: absolute;
+  transform: translate(-20%, -80%);
+}
+main #hero .text h1 {
+  font-size: 80px;
+  font-weight: 800;
+  font-family: "Archivo";
+  line-height: 90px;
+  text-transform: uppercase;
+  white-space: wrap;
+  letter-spacing: 6px;
+  text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.557);
+  margin-bottom: 20px;
+}
+main #hero .text h4 {
+  font-family: "Archivo";
+  color: white;
+  font-size: 19px;
+  font-weight: 700;
+}
+main #hero .text p {
+  font-size: 20px;
+  font-weight: 300;
+  width: 60%;
+  margin-top: 30%;
+  text-shadow: 2px 2px 1px black;
+  color: white;
+}
+main #hero .text .exh-icons {
+  margin-top: 25px;
 }
 @media (max-width: 800px) {
-  main #contact {
-    flex-direction: column;
+  main #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  main #hero::after {
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.27) 100%);
+    display: block;
+  }
+  main #hero .text {
+    color: white;
+  }
+  main #hero .text h1 {
+    font-size: 40px;
+    font-weight: 800;
+    top: 50%;
+    left: 15%;
+    transform: none;
+    line-height: 43px;
+    white-space: wrap;
+  }
+}
+main #about {
+  margin: 90px 40px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 40px;
+}
+main P {
+  flex-basis: 50%;
+}
+main .left p {
+  font-weight: bold;
+}
+main .right p {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  main #about {
+    margin: 50px 20px;
     justify-content: center;
-    margin: 40px 40px;
-  }
-  main #contact .left {
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  main #contact .left .heading {
-    font-size: 50px;
-    font-weight: 700;
-    font-family: "Archivo";
-    color: black;
-    line-height: 52px;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    margin-top: 40px;
-  }
-  main #contact .left .heading:first-of-type {
-    margin-bottom: 25px;
-    margin-top: 20px;
-  }
-  main #contact .right input#submit {
-    width: max-content;
-    padding: 0px 15px;
+    flex-direction: column;
   }
 }
 
@@ -286,8 +255,8 @@ footer {
   background: #1c1c1c;
   grid-template-columns: auto auto;
   position: static;
+  color: #fff;
   bottom: 0;
-  color: white;
   width: 100%;
   z-index: -1;
 }
@@ -410,4 +379,4 @@ footer .footer-right .navlist {
   }
 }
 
-/*# sourceMappingURL=contact.css.map */
+/*# sourceMappingURL=about.css.map */

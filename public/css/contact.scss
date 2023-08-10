@@ -1,24 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&family=Montserrat:wght@100;400&display=swap');
-
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo-Light.otf') format('opentype'); 
-}
-
-@font-face {
-    font-family: 'Archivo Bold';
-    src: url('../fonts/Archivo-ExtraBold.otf') format('opentype'); 
-}
-
-@font-face {
-    font-family: 'Archivo Regular';
-    src: url('../fonts/Archivo-Regular.ttf') format('truetype'); 
-}
-
-@font-face {
-    font-family: 'Archivo Medium';
-    src: url('../fonts/Archivo-Medium.ttf') format('truetype'); 
-}
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -33,148 +13,122 @@ body {
 }
 
 .logo {
-    width: 150px;
-    height: 80px;
-     float: none;
-}
-
-@media (max-width: 600px) {
+    width: 130px;
+    height: 70px;
+    float: none;
+  }
+  
+  @media (max-width: 600px) {
     .logo {
-        width: 100px;
-        height: 60px;
-         float: none;
+      width: 100px;
+      height: 60px;
+      float: none;
     }
-}
-
-.navbar {
-    position: absolute;
+  }
+  .navbar {
     width: 100%;
     display: flex;
     padding: 40px 60px;
-    z-index: 4 !important;
+    align-items: center;
     justify-content: space-between;
-    color: white;
-
-
-    .navlist {
-        display: flex;
-        margin-right: 70px;
-    
-        li {
-            list-style: none;
-            padding: 0px 10px;
-            font-family: 'Archivo';
-            font-weight: 600;
-            transition: font-size 0.5s;
-    
-            &:hover {
-                font-size: 22px;
-            }
-        }
-    }
-
-    .hamburger {
-        width: 3.6rem;
-        height: 1.8rem;
-        position: relative;
-        cursor: pointer;
-        line-height: 4rem;
-        z-index: 3;
-        display: none;
-        margin-top: 20px;
-      }
-      
-      .hamburger .line {
-        width: 100%;
-        height: 2px;
-        background-color: rgb(255, 255, 255);
-        position: absolute;
-        display: block;
-        right: 0;
-        transition: all 650ms;
-      }
-      
-      .hamburger .line:nth-child(1) {
-        top: 0;
-      }
-      
-      .hamburger .line:nth-child(2) {
-        top: 50%;
-        margin-top: -1px;
-      }
-      
-      .hamburger .line:nth-child(3) {
-        top: 100%;
-        margin-top: -2px;
-      }
-      
-      .hamburger.active .line:nth-child(1) {
-        transform: translateY(.8rem) rotate(45deg);
-        width: 2rem;
-      }
-      
-      .hamburger.active .line:nth-child(2) {
-        opacity: 0;
-      }
-      
-      .hamburger.active .line:nth-child(3) {
-        transform: translateY(-.8rem) rotate(-45deg);
-        width: 2rem;
-      }
-      
-
-}
-
-@media screen and (max-width: 768px) {
-
+    color: black;
+  }
+  .navbar .navlist {
+    display: flex;
+    margin-right: 70px;
+  }
+  .navbar .navlist li {
+    list-style: none;
+    padding: 0px 10px;
+    font-family: "Archivo";
+    font-weight: 600;
+    transition: font-size 0.5s;
+  }
+  .navbar .navlist li:hover {
+    font-size: 22px;
+  }
+  .navbar .hamburger {
+    width: 3.6rem;
+    height: 1.8rem;
+    position: relative;
+    cursor: pointer;
+    line-height: 4rem;
+    z-index: 7;
+    display: none;
+    margin-top: 20px;
+  }
+  .navbar .hamburger .line {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    display: block;
+    right: 0;
+    transition: all 650ms;
+  }
+  .navbar .hamburger .line:nth-child(1) {
+    top: 0;
+  }
+  .navbar .hamburger .line:nth-child(2) {
+    top: 50%;
+    margin-top: -1px;
+  }
+  .navbar .hamburger .line:nth-child(3) {
+    top: 100%;
+    margin-top: -2px;
+  }
+  .navbar .hamburger.active .line:nth-child(1) {
+    transform: translateY(0.8rem) rotate(45deg);
+    width: 2rem;
+  }
+  .navbar .hamburger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar .hamburger.active .line:nth-child(3) {
+    transform: translateY(-0.8rem) rotate(-45deg);
+    width: 2rem;
+  }
+  
+  @media screen and (max-width: 768px) {
     .navbar {
       padding: 40px 30px;
       background-color: transparent;
       top: 0;
       width: 100%;
-
-      .navlist {
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: black;
-        position: fixed;
-        left: 0;
-        color: white;
-        gap: 40px;
-        bottom: -100vh;
-        transition: bottom 650ms;
-
-        li {
-            color: white;
-        }
-
     }
-  
-      .navlist.active {
-        bottom: 0;
-      }
-
-      .hamburger {
-        display: block;
-        width: 50px;
-        height: 25px;
-      }
-  
-      .hamburger .line {
-        background-color: white;
-      }
-  
-      .hamburger.active .line {
-        background-color: #fff;
-      }
+    .navbar .navlist {
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      position: fixed;
+      z-index: 6;
+      left: 0;
+      color: white;
+      gap: 40px;
+      bottom: -100vh;
+      transition: bottom 650ms;
     }
-  
-      
+    .navbar .navlist li {
+      color: white;
+    }
+    .navbar .navlist.active {
+      bottom: 0;
+    }
+    .navbar .hamburger {
+      display: block;
+      width: 50px;
+      height: 25px;
+    }
+    .navbar .hamburger .line {
+      background-color: black;
+    }
+    .navbar .hamburger.active .line {
+      background-color: #fff;
+    }
   }
-
 
 main {
 
@@ -184,22 +138,27 @@ main {
         margin: 40px 80px;
         gap: 50px;
 
+        hr {
+            display: none;
+        }
+
         .left {
             flex-basis: 50%;
+            text-align: left;
         
             .heading {
                 font-size: 80px;
-                font-weight: 900;
-                font-family: 'Archivo Medium';
+                font-weight: 00;
+                font-family: 'Archivo';
                 color: black;
                 line-height: 70px;
-                letter-spacing: -0.04em;
+                letter-spacing: 4px;
                 margin-bottom: 35px;
-                margin-top: 60px;
+                margin-top: 40px;
 
                 &:first-of-type {
-                    margin-top: 130px;
-                    margin-bottom: 75px;
+                    margin-top: 40px;
+                    margin-bottom: 40px;
 
                 }
             }
@@ -216,8 +175,8 @@ main {
 
         .right {
             flex-basis: 50%;
-            padding-top: 130px;
-
+            padding-top: 0px;
+            text-align: left;
             input[type=text], input[type=email], input[type=tel], textarea {
                 background-color: rgb(238, 236, 236);
                 padding: 15px;
@@ -301,6 +260,40 @@ main {
         }
     }
 
+    @media (max-width: 800px) {
+        #contact {
+            flex-direction: column;
+            justify-content: center;
+            margin: 40px 40px;
+
+            .left {
+                margin-bottom: 40px;
+                text-align: center;
+            
+                .heading {
+                    font-size: 50px;
+                    font-weight: 700;
+                    font-family: 'Archivo';
+                    color: black;
+                    line-height: 52px;
+                    letter-spacing: 2px;
+                    margin-bottom: 25px;
+                    margin-top: 40px;
+    
+                    &:first-of-type {
+                        margin-bottom: 25px;
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+            .right input#submit {
+                width: max-content;
+                padding: 0px 15px;
+            }
+        }
+    }
+
 }
 
 footer {
@@ -308,8 +301,9 @@ footer {
     display: grid;
     background: #1c1c1c;
     grid-template-columns: auto auto;
-    position: fixed;
+    position: static;
     bottom: 0;
+    color: white;
     width: 100%;
     z-index: -1;
 

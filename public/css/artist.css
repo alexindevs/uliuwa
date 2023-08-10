@@ -7,6 +7,17 @@
   font-family: "Archivo";
 }
 
+.fixedNav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   color: black;
@@ -42,6 +53,7 @@ body {
   z-index: 4 !important;
   justify-content: space-between;
   color: white;
+  align-items: center;
 }
 .navbar .navlist {
   display: flex;
@@ -101,7 +113,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 40px 30px;
+    padding: 40px 20px;
     background-color: transparent;
     top: 0;
     width: 100%;
@@ -136,6 +148,99 @@ body {
   }
   .navbar .hamburger.active .line {
     background-color: #fff;
+  }
+}
+#links {
+  display: flex;
+  top: 50%;
+  height: max-content;
+  left: 0;
+  transform: translate(-45%, -50%) rotate(90deg);
+  color: #1C1C1C;
+  position: fixed;
+  width: max-content;
+  z-index: 10000000;
+}
+#links a {
+  margin-right: 50px;
+  color: #000000;
+  text-decoration: none;
+  font-size: 21px;
+  font-family: "Archivo";
+  line-height: 22px;
+  word-wrap: break-word;
+}
+#links a.active {
+  color: black;
+  position: relative;
+  font-weight: bold;
+}
+#links a.active::after {
+  content: "";
+  width: 0;
+  position: absolute;
+  top: 102%;
+  height: 3px;
+  background-color: inherit;
+  left: 0;
+  animation: widen 1s ease 0s 1 normal forwards;
+}
+@keyframes widen {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #links {
+    display: flex;
+    top: 100%;
+    left: 0%;
+    transform: translate(0%, -100%) rotate(0deg);
+    color: white;
+    position: fixed;
+    height: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    z-index: 10000000;
+    background-color: #1C1C1C;
+  }
+  #links a {
+    margin-right: 0px;
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Archivo";
+    line-height: 22px;
+    word-wrap: break-word;
+  }
+  #links a.active {
+    color: white;
+    position: relative;
+    font-weight: 300;
+  }
+  #links a.active::after {
+    content: "";
+    width: 0;
+    position: absolute;
+    top: 102%;
+    height: 3px;
+    background-color: white;
+    left: 0;
+    animation: widen 1s ease 0s 1 normal forwards;
+  }
+  @keyframes widen {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
   }
 }
 main #hero {
@@ -223,7 +328,7 @@ main #hero .text .exh-icons {
     font-weight: 800;
     top: 50%;
     left: 15%;
-    transform: translate(-15%, -50%);
+    transform: none;
     line-height: 43px;
     white-space: wrap;
   }
@@ -231,7 +336,7 @@ main #hero .text .exh-icons {
     font-size: 16px;
     font-weight: 300;
     width: 80%;
-    transform: translate(-10%, -50%);
+    transform: none;
     text-shadow: none;
     color: white;
   }
@@ -240,7 +345,7 @@ main #about {
   display: grid;
   grid-template-columns: auto auto;
   background-color: #1C1C1C;
-  padding: 90px 90px;
+  padding: 90px 60px;
   gap: 40px;
 }
 main #about .left p {
@@ -272,7 +377,7 @@ main #about .right p {
     display: grid;
     grid-template-columns: auto;
     background-color: #1C1C1C;
-    padding: 40px 40px;
+    padding: 40px 20px;
     gap: 40px;
   }
   main #about .left p {
@@ -303,7 +408,7 @@ main #about .right p {
 }
 main #artworks {
   background-color: white;
-  padding: 90px 60px;
+  padding: 90px 0px;
 }
 main #artworks h2 {
   font-size: 80px;
@@ -370,7 +475,7 @@ main #artworks #artlist .artist .art-details button {
 @media (max-width: 800px) {
   main #artworks {
     background-color: white;
-    padding: 40px 10px;
+    padding: 40px 30px;
   }
   main #artworks h2 {
     font-size: 50px;
@@ -394,7 +499,7 @@ main #artworks #artlist .artist .art-details button {
     padding: 40px 0px;
     justify-content: space-around;
     align-items: center;
-    margin: 0px 20px auto;
+    margin: 0px;
   }
 }
 main #biography {
@@ -428,7 +533,7 @@ main #biography button {
 @media (max-width: 800px) {
   main #biography {
     background-color: #1C1C1C;
-    padding: 50px 40px;
+    padding: 40px 20px;
   }
   main #biography h2 {
     font-size: 2.6rem;
@@ -608,6 +713,7 @@ main #exhibitions #upcoming .upcoming-exhibition .text > *:nth-child(n) {
   }
   main #exhibitions h2 {
     font-size: 40px;
+    letter-spacing: 1px;
     margin: auto;
   }
   main #exhibitions .links {
@@ -624,6 +730,15 @@ main #exhibitions #upcoming .upcoming-exhibition .text > *:nth-child(n) {
     text-transform: uppercase;
     line-height: 30px;
     word-wrap: break-word;
+  }
+  main #exhibitions #current {
+    display: flex;
+    overflow: scroll;
+    position: relative;
+    height: 100vh;
+  }
+  main #exhibitions #current::-webkit-scrollbar {
+    display: none;
   }
   main #exhibitions #current .exhibition {
     display: flex;
@@ -663,6 +778,62 @@ main #exhibitions #upcoming .upcoming-exhibition .text > *:nth-child(n) {
   }
   main #exhibitions #current .exhibition .text .exh-icon.left {
     margin-right: 35px;
+  }
+  main #exhibitions #past {
+    height: 70vh;
+    overflow: scroll;
+    display: none;
+  }
+  main #exhibitions #past::-webkit-scrollbar {
+    display: none;
+  }
+  main #exhibitions #past .past-exhibition {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+    margin: 20px auto;
+    background-color: rgb(250, 249, 249);
+    width: 90%;
+    box-shadow: 0px 6px 6px rgba(121, 120, 120, 0.36);
+  }
+  main #exhibitions #past .past-exhibition .exh-img {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+  }
+  main #exhibitions #past .past-exhibition .text {
+    padding: 20px;
+  }
+  main #exhibitions #upcoming {
+    height: 70vh;
+    overflow: scroll;
+    display: none;
+  }
+  main #exhibitions #upcoming::-webkit-scrollbar {
+    display: none;
+  }
+  main #exhibitions #upcoming .upcoming-exhibition {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+    margin: 20px auto;
+    background-color: rgb(250, 249, 249);
+    width: 90%;
+    box-shadow: 0px 6px 6px rgba(121, 120, 120, 0.36);
+  }
+  main #exhibitions #upcoming .upcoming-exhibition .exh-img {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+  }
+  main #exhibitions #upcoming .upcoming-exhibition .text {
+    padding: 20px;
   }
 }
 

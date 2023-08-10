@@ -18,11 +18,11 @@
 <body>
     <div class="preloader fadeOutBlack"></div>
     <nav class="navbar">
-        <img src="images/logo.png" class="logo" alt="">
+        <img src="images/logo.png" class="logo" onclick="window.location.href = '/'" alt="">
         <ul class="navlist">
             <li onclick="window.location.href = '/artists'">Artists</li>
             <li>Exhibitions</li>
-            <li>About</li>
+            <li onclick="window.location.href = '/about-us'">About</li>
             <li onclick="window.location.href = '/contact'">Contact</li>
         </ul>
         <div class="hamburger" onclick="toggleNavbar()">
@@ -43,11 +43,19 @@
 }
 
     </script>
+<section id="links" class="hidden">
+    <a href="#about"  onclick="toggleActiveLink(this)" class="jumplink active">Overview</a>
+    <a href="#artworks" onclick="toggleActiveLink(this)" class="jumplink">Works</a>
+    <a href="#biography" onclick="toggleActiveLink(this)" class="jumplink">Bio</a>
+    <a href="#exhibitions" onclick="toggleActiveLink(this)" class="jumplink">Exhibitions</a>
+
+</section>
+
     <main>
     <section id="hero">
     <img src="images/artist_bg.png" alt="Watcher 1" class="banner">
     <div class="text">
-        <h1 class="art-title">Olumide Onadipe</h1>
+        <h1 class="artTitle">Olumide Onadipe</h1>
         <!-- <h4 class="title">Olumide Onadipe</h4> -->
         <p class="description">Olumide Onadipe is a multi-disciplinary visual artist whose sculptures are built using diverse media including plastics. </p>
     </div>
@@ -244,12 +252,12 @@
         </div>
         <hr>
         <div class="footer-right">
-          <img src="images/logo.png" class="logo" alt="">
+          <img src="images/logo.png" class="logo" onclick="window.location.href = '/'" alt="">
           <ul class="navlist">
                 <li>Artists</li>
                 <li>Exhibitions</li>
                 <li>Store</li>
-                <li>About</li>
+                <li onclick="window.location.href = '/about-us'">About</li>
                 <li>Contact</li>
             </ul>
             <p class="footer-copy">&copy; Uliuwa 2023</p>

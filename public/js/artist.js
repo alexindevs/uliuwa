@@ -230,3 +230,85 @@ $(document).ready(function() {
   });  
 })  
 
+//Link Section
+
+function toggleActiveLink(link) {
+  const links = document.querySelectorAll('#links a');
+  links.forEach(item => item.classList.remove('active'));
+  link.classList.add('active');
+}
+
+const divsAndFontcolors = [
+  {
+    divName: "#about",
+    color: "#1c1c1c"
+  },
+  {
+    divName: "#artworks",
+    color: "white"
+  },
+  {
+    divName: "#biography",
+    color: "#1c1c1c"
+  },
+  {
+    divName: "#exhibitions",
+    color: "white"
+  }
+];
+
+function isInHeroViewport() {
+  const hero = document.querySelector('#hero');
+  if (!hero) return false;
+
+  const rect = hero.getBoundingClientRect();
+  const viewportTop = window.innerHeight * 0.97;
+  return rect.top <= viewportTop;
+}
+
+const links = document.querySelectorAll('.jumplink');
+const linksElement = document.getElementById('links');
+
+if (window.innerWidth > 768) {
+const callback = (entries) => {
+  entries.forEach(entry => {
+    const intersectingDivId = `#${entry.target.id}`;
+    const colorObj = divsAndFontcolors.find(item => item.divName === intersectingDivId);
+
+    if (colorObj) {
+      links.forEach(link => {
+        link.style.color = colorObj.color;
+      });
+    }
+  });
+
+  // Check if the top of the "hero" element is in the viewport
+  if (isInHeroViewport()) {
+    linksElement.style.display = 'none'; // Hide the links
+  } else {
+    linksElement.style.display = 'flex'; // Show the links
+  }
+};
+
+const options = {
+  threshold: 0 // Adjust as needed
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+divsAndFontcolors.forEach(item => {
+  const div = document.querySelector(item.divName);
+  if (div) {
+    observer.observe(div);
+  }
+});
+
+window.addEventListener('scroll', () => {
+ 
+    if (!isInHeroViewport()) {
+      linksElement.style.display = 'none'; // Hide the links
+    } else {
+      linksElement.style.display = 'flex'; // Show the links
+    }
+});
+};
