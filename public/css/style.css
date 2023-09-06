@@ -7,6 +7,10 @@
   color: white;
 }
 
+.navlist li{
+  transition: .3s ease;
+}
+
 body {
   width: 100%;
 }
@@ -46,6 +50,7 @@ body {
 }
 .navbar .navlist li:hover {
   font-size: 22px;
+  transition: .2s ease;
 }
 .navbar .hamburger {
   width: 3.6rem;

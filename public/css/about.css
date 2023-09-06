@@ -7,6 +7,10 @@
   font-family: "Archivo";
 }
 
+.navlist li{
+  transition: .3s ease;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -49,7 +53,7 @@ body {
   padding: 0px 10px;
   font-family: "Archivo";
   font-weight: 600;
-  transition: font-size 0.5s;
+  transition: font-size .3s ease;
 }
 .navbar .navlist li:hover {
   font-size: 22px;
