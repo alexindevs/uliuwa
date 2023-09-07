@@ -6,6 +6,10 @@
   font-family: "Archivo";
 }
 
+.navlist li{
+  transition: .3s ease;
+}
+
 body {
   width: 100%;
   color: black;

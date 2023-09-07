@@ -6,6 +6,10 @@
   font-family: "Archivo";
 }
 
+.navlist li{
+  transition: .3s 3 ease;
+}
+
 html {
   position: relative;
 }

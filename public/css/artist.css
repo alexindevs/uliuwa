@@ -14,6 +14,10 @@
   background-color: #000000;
 }
 
+.navlist li{
+  transition: .3s 3 ease;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -169,6 +173,7 @@ body {
   font-family: "Archivo";
   line-height: 22px;
   word-wrap: break-word;
+  transition: .3s ease;
 }
 #links a.active {
   color: black;
@@ -211,7 +216,7 @@ body {
   }
   #links a {
     margin-right: 0px;
-    color: white;
+    color: transaparent;
     font-weight: 300;
     text-decoration: none;
     font-size: 16px;
