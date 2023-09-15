@@ -164,8 +164,10 @@ const currentSection = document.getElementById('current');
 const upcomingSection = document.getElementById('upcoming');
 
 // Function to toggle the active link and display the corresponding section
+
 function toggleSection(sectionToShow, linkToActivate) {
-    // Hide all sections
+  const mediaQuery = window.matchMedia('(max-width:500px)')
+  // Hide all sections
     archiveSection.style.display = 'none';
     currentSection.style.display = 'none';
     upcomingSection.style.display = 'none';
@@ -175,8 +177,13 @@ function toggleSection(sectionToShow, linkToActivate) {
     currentLink.classList.remove('active');
     upcomingLink.classList.remove('active');
 
-    // Display the selected section
+    if(mediaQuery.matches) {
+      sectionToShow.style.display = 'grid';
+      // sectionToShow.style. = 'row';
+    } else {
     sectionToShow.style.display = 'flex';
+    }
+    // Display the selected section
 
     // Activate the selected link
     linkToActivate.classList.add('active');
