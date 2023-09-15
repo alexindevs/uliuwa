@@ -1,0 +1,566 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Archivo";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  color: black;
+  scroll-behavior: smooth;
+}
+
+.logo {
+  width: 150px;
+  height: 80px;
+  float: none;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 100px;
+    height: 60px;
+    float: none;
+  }
+}
+.navbar {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  padding: 40px 60px;
+  z-index: 4 !important;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+.navbar .navlist {
+  display: flex;
+  margin-right: 70px;
+}
+.navbar .navlist li {
+  list-style: none;
+  padding: 0px 10px;
+  font-family: "Archivo";
+  font-weight: 600;
+  transition: font-size 0.5s;
+}
+.navbar .navlist li:hover {
+  font-size: 22px;
+}
+.navbar .hamburger {
+  width: 3.6rem;
+  height: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  line-height: 4rem;
+  z-index: 3;
+  display: none;
+  margin-top: 20px;
+}
+.navbar .hamburger .line {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  display: block;
+  right: 0;
+  transition: all 650ms;
+}
+.navbar .hamburger .line:nth-child(1) {
+  top: 0;
+}
+.navbar .hamburger .line:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+}
+.navbar .hamburger .line:nth-child(3) {
+  top: 100%;
+  margin-top: -2px;
+}
+.navbar .hamburger.active .line:nth-child(1) {
+  transform: translateY(0.8rem) rotate(45deg);
+  width: 2rem;
+}
+.navbar .hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+.navbar .hamburger.active .line:nth-child(3) {
+  transform: translateY(-0.8rem) rotate(-45deg);
+  width: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 40px 20px;
+    background-color: transparent;
+    top: 0;
+    width: 100%;
+  }
+  .navbar .navlist {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    position: fixed;
+    left: 0;
+    color: white;
+    gap: 40px;
+    bottom: -100vh;
+    transition: bottom 650ms;
+  }
+  .navbar .navlist li {
+    color: white;
+  }
+  .navbar .navlist.active {
+    bottom: 0;
+  }
+  .navbar .hamburger {
+    display: block;
+    width: 50px;
+    height: 25px;
+  }
+  .navbar .hamburger .line {
+    background-color: white;
+  }
+  .navbar .hamburger.active .line {
+    background-color: #fff;
+  }
+}
+main #hero {
+  position: relative;
+  width: 100%;
+  height: 97vh;
+}
+main #hero::after {
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.461), transparent);
+  display: block;
+}
+main #hero .banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+main #hero .text {
+  color: white;
+  top: 70%;
+  left: 40%;
+  width: 60%;
+  position: absolute;
+  transform: translate(-40%, -80%);
+}
+main #hero .text h1 {
+  font-size: 70px;
+  font-weight: 800;
+  font-family: "Archivo";
+  line-height: 90px;
+  text-transform: uppercase;
+  white-space: wrap;
+  letter-spacing: 6px;
+  text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.557);
+  margin-bottom: 20px;
+}
+main #hero .text h4 {
+  font-family: "Archivo";
+  color: white;
+  font-size: 19px;
+  font-weight: 700;
+}
+main #hero .text p {
+  font-size: 20px;
+  font-weight: 300;
+  width: 60%;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 1px black;
+  color: white;
+}
+main #hero .text .exh-icons {
+  margin-top: 25px;
+}
+@media (max-width: 800px) {
+  main #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  main #hero::after {
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.27) 100%);
+    display: block;
+  }
+  main #hero .text {
+    color: white;
+    top: 90%;
+    width: auto;
+    left: 20%;
+    position: absolute;
+    transform: translate(-20%, -80%);
+  }
+  main #hero .text h1 {
+    font-size: 40px;
+    font-weight: 800;
+    top: 50%;
+    left: 15%;
+    transform: none;
+    line-height: 43px;
+    white-space: wrap;
+  }
+  main #hero .text p {
+    font-size: 16px;
+    font-weight: 300;
+    width: 80%;
+    transform: none;
+    text-shadow: none;
+    color: white;
+  }
+}
+main #about {
+  margin: 90px 40px;
+}
+main #about .heading {
+  letter-spacing: 2px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+main #about hr {
+  background-color: black;
+  margin-bottom: 20px;
+}
+main #about .descriptions {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  row-gap: 40px;
+}
+main #about .descriptions P {
+  flex-basis: 50%;
+}
+main #about .descriptions .right {
+  flex-basis: 60%;
+}
+main #about .descriptions .right p {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  main #about {
+    margin: 50px 20px;
+  }
+  main #about .descriptions {
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  main #about .right {
+    flex-basis: auto;
+  }
+}
+main #artworks {
+  background-color: white;
+  margin: 90px 40px;
+}
+main #artworks .heading {
+  letter-spacing: 2px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+main #artworks hr {
+  background-color: black;
+  margin-bottom: 20px;
+}
+main #artworks #artlist {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: auto auto auto;
+}
+main #artworks #artlist .art-column {
+  display: flex;
+  flex-direction: column;
+}
+main #artworks #artlist .artwork {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+main #artworks #artlist .artist {
+  flex-basis: 30%;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+main #artworks #artlist .artist .art-details {
+  display: flex;
+  gap: 20px;
+  text-transform: italic;
+  width: 100%;
+}
+main #artworks #artlist .artist .art-details .text {
+  margin-top: 10px;
+  width: 58%;
+}
+main #artworks #artlist .artist .art-details .text > * {
+  margin-top: 5px;
+}
+main #artworks #artlist .artist .art-details .text .art_title {
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "Archivo";
+}
+main #artworks #artlist .artist .art-details button {
+  color: white;
+  background-color: #1C1C1C;
+  width: 110px;
+  margin: 10PX;
+  height: 40px;
+  border: none;
+  font-weight: 700;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  main #artworks {
+    background-color: white;
+    margin: 50px 20px;
+  }
+  main #artworks #artlist {
+    display: flex;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: auto;
+    padding: 40px 0px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px;
+  }
+}
+main #slideshow {
+  margin: 90px 0px 0px;
+  position: relative;
+  height: 70vh;
+  width: 100%;
+}
+main #slideshow .slide {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+main #slideshow .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main #slideshow .slide-buttons {
+  z-index: 9;
+  position: absolute;
+  top: 90%;
+  color: white;
+  left: 90%;
+  display: flex;
+  gap: 20px;
+  transform: translate(-90%, -90%);
+}
+@media (max-width: 800px) {
+  main #slideshow {
+    margin: 50px 0px 0px;
+    height: 50vh;
+  }
+}
+main #more-exhibitions {
+  margin: 90px 40px;
+}
+main #more-exhibitions .heading {
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+main #more-exhibitions hr {
+  background-color: black;
+  margin-bottom: 20px;
+}
+main #more-exhibitions .exhibitions {
+  margin: 30px 0px 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: scroll;
+  row-gap: 40px;
+}
+main #more-exhibitions .exhibitions::-webkit-scrollbar {
+  display: none;
+}
+main #more-exhibitions .exhibitions .exhibition {
+  width: 30vw;
+}
+main #more-exhibitions .exhibitions .exhibition .exh-img {
+  width: 100%;
+  height: 30vw;
+}
+@media (max-width: 800px) {
+  main #more-exhibitions {
+    margin: 50px 20px;
+  }
+  main #more-exhibitions .exhibitions {
+    margin: 30px 0px 30px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  main #more-exhibitions .exhibitions .exhibition {
+    width: 100%;
+  }
+  main #more-exhibitions .exhibitions .exhibition .exh-img {
+    height: 400px;
+    padding-bottom: 15px;
+  }
+}
+
+footer {
+  padding: 70px;
+  display: grid;
+  background: #1c1c1c;
+  grid-template-columns: auto auto;
+  width: 100%;
+  color: white;
+}
+footer .logo {
+  float: right;
+  margin-bottom: 40px;
+}
+footer hr {
+  width: 100%;
+  background-color: white;
+  margin: 0px auto 40px;
+  display: none;
+}
+footer .navlist {
+  display: flex;
+  margin-right: 70px;
+  margin-top: 30px;
+}
+footer .navlist li {
+  list-style: none;
+  padding: 0px 10px;
+  font-family: "Archivo";
+  font-weight: 600;
+  transition: font-size 0.5s;
+}
+footer .navlist li:hover {
+  font-size: 22px;
+}
+footer .footer-copy:nth-of-type(0) {
+  display: none;
+}
+footer .heading {
+  display: flex;
+  column-gap: 30px;
+}
+footer .heading h4 {
+  display: inline;
+  font-size: 40px;
+  color: white;
+  font-weight: 600;
+  font-family: "Archivo";
+  margin-bottom: 30px;
+}
+footer .heading .icon {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(52, 52, 52, 0.1803921569);
+  padding: 7px;
+}
+footer p {
+  margin-bottom: 30px;
+}
+footer .footer-right #footer-header {
+  display: block;
+  padding: 0px;
+  text-align: right;
+  margin-left: auto;
+}
+footer .footer-right p {
+  text-align: right;
+}
+footer .footer-right .navlist {
+  margin-right: 0px;
+  margin-bottom: 30px;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .logo {
+    float: none;
+    margin-bottom: 0px;
+  }
+  footer .heading {
+    display: flex;
+    column-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+  footer .footer-copy:nth-of-type(1) {
+    display: none;
+  }
+  footer p {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  footer .navlist {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .navlist li {
+    padding-bottom: 10px;
+  }
+  footer hr {
+    display: block;
+    height: 1px;
+  }
+  footer .footer-right {
+    text-align: center;
+  }
+  footer .footer-right #footer-header {
+    display: block;
+    padding: 0px;
+    text-align: center;
+    margin-left: auto;
+  }
+  footer .footer-right p {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=exhibition.css.map */
