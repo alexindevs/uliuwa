@@ -428,6 +428,37 @@ main {
                 }
         }
     }
+
+    #slideshow {
+        margin: 90px 0px 0px;
+        position: relative;
+        height: 70vh;
+        width: 100%;
+
+        .slide {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .slide-buttons {
+            z-index: 9;
+            position: absolute;
+            top: 90%;
+            color: white;
+            left: 90%;
+            display: flex;
+            gap: 20px;
+            transform: translate(-90%, -90%);
+        }
+    }
 }
 
 
@@ -591,4 +622,6 @@ p {
             } 
         }
     }
+
+
 }

@@ -72,6 +72,66 @@
             <!-- This will be generated automatically -->
         </div>
     </section>
+    <section id="slideshow">
+        <div class="slide">
+            <img src="images/Rectangle 3.png" alt="Watcher 1">
+        </div>
+        <div class="slide">
+            <img src="art/Bloom through 8.jpg" alt="Bloom Through">
+        </div>
+        <div class="slide">
+            <img src="art/Desire III, Acrylic on canvas, 42in x 36in 2022.jpg" alt="Desire III">
+        </div>
+        <div class="slide-buttons">
+            <span class="leftSlideButton">left</span>
+            <span class="rightSlideButton">right</span>
+        </div>
+    </section>
+    <script>
+        // Get references to slideshow elements
+        const slides = document.querySelectorAll('.slide');
+        const leftButton = document.querySelector('.leftSlideButton');
+        const rightButton = document.querySelector('.rightSlideButton');
+        
+        let currentIndex = 0; // Initialize the current slide index
+    
+        // Function to show a specific slide
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach((slide) => {
+                slide.style.display = 'none';
+            });
+    
+            // Show the slide at the specified index
+            slides[index].style.display = 'block';
+        }
+    
+        // Function to go to the next slide
+        function nextSlide() {
+            currentIndex++;
+            if (currentIndex >= slides.length) {
+                currentIndex = 0; // Loop back to the first slide
+            }
+            showSlide(currentIndex);
+        }
+    
+        // Function to go to the previous slide
+        function previousSlide() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = slides.length - 1; // Go to the last slide
+            }
+            showSlide(currentIndex);
+        }
+    
+        // Initial display
+        showSlide(currentIndex);
+    
+        // Event listeners for left and right buttons
+        leftButton.addEventListener('click', previousSlide);
+        rightButton.addEventListener('click', nextSlide);
+    </script>
+    
     </main>
     <footer>
         <div class="footer-left">
