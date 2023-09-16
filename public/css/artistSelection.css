@@ -190,6 +190,7 @@ main #artlist .artist {
 main #artlist .artist .art {
   position: relative;
   z-index: -1;
+  cursor: pointer;
 }
 main #artlist .artist .art .artwork {
   width: 100%;
@@ -234,6 +235,7 @@ main #artlist .artist .art-details {
 }
 main #artlist .artist .art-details .text {
   margin-top: 10px;
+  cursor: pointer;
 }
 main #artlist .artist .art-details .text .art_title {
   font-weight: 700;
@@ -259,16 +261,16 @@ main #artlist .artist .art-details button {
     color: rgb(28, 28, 28);
     line-height: 50px;
     letter-spacing: 4px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     text-align: center;
     margin-left: 0px;
-    margin-top: 0px;
+    margin-top: 30px;
   }
   main #artlist {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto;
     width: 90%;
-    row-gap: 40px;
+    gap: 40px;
     margin: auto;
     margin-bottom: 70px;
     justify-content: center;
@@ -280,7 +282,7 @@ main #artlist .artist .art-details button {
     position: relative;
   }
   main #artlist .artist .art .artwork {
-    height: 350px;
+    height: 400px;
     transition: filter 0.5s;
   }
   main #artlist .artist .art:hover > .artwork {
@@ -303,7 +305,7 @@ main #artlist .artist .art-details button {
   main #artlist .artist .art .description {
     position: absolute;
     visibility: hidden;
-    width: 70%;
+    width: 50%;
     height: 100%;
     align-items: center;
     color: white;
@@ -336,6 +338,31 @@ main #artlist .artist .art-details button {
     height: 40px;
     border: none;
     font-weight: 700;
+  }
+}
+
+@media (max-width: 550px){
+  main #artlist {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    row-gap: 40px;
+    margin: auto;
+    margin-bottom: 70px;
+    justify-content: center;
+  }
+}
+@media (max-width: 450px){
+  
+  main #artlist .artist .art .artwork {
+    height: 350px;
+    transition: filter 0.5s;
+  }
+}
+@media (max-width: 350px){
+  main #artlist .artist .art .artwork {
+    height: 300px;
+    transition: filter 0.5s;
   }
 }
 footer {

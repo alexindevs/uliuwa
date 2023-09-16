@@ -37,9 +37,10 @@ body {
 }
 
 .logo {
-  width: 150px;
-  height: 80px;
+  width: 120px;
+  height: 60px;
   float: none;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -273,6 +274,7 @@ main #hero .banner {
   height: 100vh;
   object-fit: cover;
   z-index: -2;
+  cursor: pointer;
 }
 main #hero .text {
   color: white;
@@ -280,6 +282,7 @@ main #hero .text {
   left: 20%;
   position: absolute;
   transform: translate(-20%, -80%);
+  cursor: pointer;
 }
 main #hero .text h1 {
   font-size: 80px;
