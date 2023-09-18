@@ -22,10 +22,9 @@ body {
 }
 
 .logo {
-  width: 120px;
-  height: 60px;
-  float: none;
-  cursor: pointer;
+  width: 130px;
+  height: 70px;
+  float: none;cursor: pointer;
 }
 
 @media (max-width: 600px) {

@@ -16,8 +16,8 @@ body {
 }
 
 .logo {
-  width: 120px;
-  height: 60px;
+  width: 130px;
+  height: 70px;
   float: none;
   cursor: pointer;
 }
@@ -183,7 +183,7 @@ main #display .artwork {
   object-fit: cover;
 }
 main #display .fadeInBlack {
-  animation: fadeInBlack 3s ease 0s 1 normal forwards;
+  animation: fadeInBlack ease 0s 1 normal forwards;
 }
 @keyframes fadeInBlack {
   0% {
@@ -218,7 +218,7 @@ main #display .attribution .fade-in {
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  animation-delay: 4s;
+  animation-delay: 2s;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: forwards;
