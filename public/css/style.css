@@ -52,6 +52,13 @@ body {
   transition: font-size 0.5s;
   cursor: pointer;
 }
+.navbar button{
+  margin-top: -15px;
+  margin-left: 15px;
+  margin-right: -20px;
+}
+
+
 .navbar .navlist li:hover {
   font-size: 22px;
   transition: .2s ease;
@@ -245,7 +252,8 @@ main #display .attribution h5 {
   font-weight: 300;
   margin-bottom: 40px;
 }
-main #display .attribution .explore {
+main #display .attribution .explore,
+.explore {
   padding: 10px 25px;
   background: transparent;
   border: 1px solid white;
@@ -259,7 +267,7 @@ main #display .attribution .explore {
   margin: 0 auto;
   transition: all 0.5s;
 }
-main #display .attribution .explore::before, main #display .attribution .explore::after {
+main #display .attribution .explore::before, main #display .attribution .explore::after, .explore::before, .explore::after {
   content: "";
   display: block;
   height: 100%;
@@ -272,18 +280,18 @@ main #display .attribution .explore::before, main #display .attribution .explore
   transition: 0.5s ease-out;
   background-color: white;
 }
-main #display .attribution .explore::before {
+main #display .attribution .explore::before, .explore::before {
   top: -50%;
   left: -25%;
   transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
 }
-main #display .attribution .explore:hover::before {
+main #display .attribution .explore:hover::before, .explore:hover::before {
   transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
 }
-main #display .attribution .explore:hover::after {
+main #display .attribution .explore:hover::after, .explore:hover::after {
   transform: skew(45deg) translate(-50%, -50%);
 }
-main #display .attribution .explore:hover {
+main #display .attribution .explore:hover, .explore:hover {
   color: black;
 }
 @media (max-width: 800px) {
@@ -296,7 +304,7 @@ main #display .attribution .explore:hover {
   main #display .attribution h5 {
     font-size: 18px;
   }
-  main #display .attribution .explore {
+  main #display .attribution .explore, .explore {
     padding: 7px 15px;
     font-size: 16px;
   }
@@ -559,6 +567,16 @@ footer .footer-right .navlist {
   footer .footer-right p {
     margin-bottom: 30px;
     text-align: center;
+  }
+}
+@media screen and (max-width: 820px) {
+  .navbar button{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #register{
+    animation: none;
+    display: none;
   }
 }
 
