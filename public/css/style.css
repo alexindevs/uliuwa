@@ -310,8 +310,25 @@ main #display .attribution .explore:hover {
   background-color: rgba(0, 0, 0, 0.8274509804);
   color: white;
   z-index: 2500000;
-  display: none;
+  /* display: none; */
+  transition: .5s ease;
+  transform: translateX(150%);
+  animation-name: signout;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 5s;
 }
+
+@keyframes signout {
+  0%{
+    transform: translateX(150%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
 #register div.header {
   visibility: hidden;
   margin-bottom: 0px;
