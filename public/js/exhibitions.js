@@ -41,19 +41,19 @@ const pastExhibitions = [
     {
       name: "Chairman 1",
       date: "June 12 to July 24, 2023",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi magnam officia, a porro eligendi quod facere, maiores suscipit harum dolorum voluptas sapiente quae. Ipsum neque illo quibusdam, dicta impedit, veritatis ullam iure accusamus aut fuga asperiores modi natus amet praesentium recusandae eos, fugiat reiciendis dolore. Ab culpa pariatur nesciunt consequuntur repellat sint, doloribus dignissimos possimus iste dolorem nemo excepturi.",
+      description:"",
       imageSrc: "art/olumide (16).jpg"
     },
     {
         name: "Chairman 1",
         date: "June 12 to July 24, 2023",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi magnam officia, a porro eligendi quod facere, maiores suscipit harum dolorum voluptas sapiente quae. Ipsum neque illo quibusdam, dicta impedit, veritatis ullam iure accusamus aut fuga asperiores modi natus amet praesentium recusandae eos, fugiat reiciendis dolore. Ab culpa pariatur nesciunt consequuntur repellat sint, doloribus dignissimos possimus iste dolorem nemo excepturi.",
+        description: "",
         imageSrc: "art/olumide (16).jpg"
       },
       {
         name: "Chairman 1",
         date: "June 12 to July 24, 2023",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi magnam officia, a porro eligendi quod facere, maiores suscipit harum dolorum voluptas sapiente quae. Ipsum neque illo quibusdam, dicta impedit, veritatis ullam iure accusamus aut fuga asperiores modi natus amet praesentium recusandae eos, fugiat reiciendis dolore. Ab culpa pariatur nesciunt consequuntur repellat sint, doloribus dignissimos possimus iste dolorem nemo excepturi.",
+        description: "",
         imageSrc: "art/olumide (16).jpg"
       },
     // Add more current exhibitions as needed
@@ -135,9 +135,42 @@ function createExhibitionDiv(exhibition, exhibitionType) {
     dateHeading.classList.add("exh-date"); // Add date class
     dateHeading.textContent = exhibition.date;
     
-    const descriptionPara = document.createElement("p");
+    const descriptionPara = document.createElement("div");
     descriptionPara.classList.add("description"); // Add description class
     descriptionPara.textContent = exhibition.description;
+
+    const para1 = document.createElement("p")
+    para1.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nesciunt incidunt hic est doloribus architecto neque voluptates illo nulla eum consequuntur ab quia aut dolorem dolor, quaerat voluptatum, ipsum optio rerum atque modi cupiditate repellat. Molestias, laboriosam ad? Possimus a minima beatae vel repudiandae velit veritatis voluptate est fuga quos porro obcaecati do? "
+
+    const para2 = document.createElement("p")
+    para2.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nesciunt incidunt hic est doloribus architecto neque voluptates illo nulla eum consequuntur ab quia aut dolorem dolor, quaerat voluptatum, ipsum optio rerum atque modi cupiditate repellat. Molestias, laboriosam ad? Possimus a minima beatae vel repudiandae velit veritatis voluptate est fuga quos porro obcaecati dolore itaque magni voluptas delectus nesciunt, iusto, asperiores debitis nisi eos. Nostrum vero aliquam unde similique ea maiores ad eos debitis nemo! Veniam, adipisci incidunt illum quod qui in assumenda reprehenderit totam eligendi voluptatem laboriosam commodi, rerum, est magni exercitationem. Eius vero quae dicta reiciendis, porro itaque minima?"
+    para2.style.display = "none";
+    para2.classList.add("learnMoreContent")
+
+    const ShowLess = document.createElement("span")
+    ShowLess.innerHTML = "Show less"
+    ShowLess.style.color = "blue"
+    ShowLess.classList.add('less-span')
+    
+    const learnMore = document.createElement("span")
+    learnMore.classList.add('learn-span')
+    learnMore.innerHTML = "Learn more"
+    learnMore.style.color = "blue"
+
+    descriptionPara.appendChild(para1);
+    descriptionPara.appendChild(para2);
+    para1.appendChild(learnMore);
+    para2.appendChild(ShowLess);
+
+    //function for the learn more paragraph
+    learnMore.addEventListener('click', () => {
+      para2.style.display = "block"
+      learnMore.style.display = "none"
+    })
+    ShowLess.addEventListener('click', () => {
+      para2.style.display = "none"
+      learnMore.style.display = "block"
+    })
     
     textDiv.appendChild(nameHeading);
     textDiv.appendChild(dateHeading);

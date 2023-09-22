@@ -18,6 +18,13 @@ body {
   cursor: pointer;
 }
 
+.learnMoreContent{
+  margin-top: 20px;
+}
+.less-span, .learn-span{
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .logo {
     width: 100px;
