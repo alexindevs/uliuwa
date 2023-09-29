@@ -17,9 +17,10 @@ body {
 }
 
 .logo {
-  width: 150px;
-  height: 80px;
+  width: 130px;
+  height: 70px;
   float: none;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {

@@ -33,9 +33,9 @@ body {
 }
 
 .logo {
-  width: 150px;
-  height: 80px;
-  float: none;
+  width: 130px;
+  height: 70px;
+  float: none;cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -65,6 +65,7 @@ body {
   font-family: "Archivo";
   font-weight: 600;
   transition: font-size 0.5s;
+  cursor: pointer;
 }
 .navbar .navlist li:hover {
   font-size: 22px;
@@ -266,6 +267,7 @@ main #hero .banner {
   height: 100vh;
   object-fit: cover;
   z-index: -2;
+  cursor: pointer;
 }
 main #hero .text {
   color: white;
@@ -273,6 +275,7 @@ main #hero .text {
   left: 20%;
   position: absolute;
   transform: translate(-20%, -80%);
+  cursor: pointer;
 }
 main #hero .text h1 {
   font-size: 80px;

@@ -48,6 +48,7 @@ body {
   font-family: "Archivo";
   font-weight: 600;
   transition: font-size 0.5s;
+  cursor: pointer;
 }
 
 .navbar .navlist li:hover {

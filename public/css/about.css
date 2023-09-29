@@ -18,9 +18,9 @@ body {
 }
 
 .logo {
-  width: 150px;
-  height: 80px;
-  float: none;
+  width: 130px;
+  height: 70px;
+  float: none;cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -50,6 +50,8 @@ body {
   font-family: "Archivo";
   font-weight: 600;
   transition: font-size 0.5s;
+  transition: font-size .5s ease;
+  cursor: pointer;
 }
 .navbar .navlist li:hover {
   font-size: 22px;
