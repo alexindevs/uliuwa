@@ -77,15 +77,9 @@ const artistData = [
       const artDetails = $('<div>').addClass('art-details');
       const textDiv = $('<div>').addClass('text');
       const nameHeading = $('<h4>').addClass('art_title').text(artist.name);
-      const enquireButton = $('<button>').addClass('art-button').text('EXPLORE');
-      const yearPara = $('<p>').addClass('year').text(artist.year);
-      const titlePara = $('<p>').addClass('title').text(artist.title);
   
       textDiv.append(nameHeading);
-      textDiv.append(yearPara);
-      textDiv.append(titlePara);
       artDetails.append(textDiv);
-      artDetails.append(enquireButton);
       artistDiv.append(image);
       artistDiv.append(artDetails);
   
@@ -96,5 +90,6 @@ const artistData = [
       observer.observe(artistDiv[0]);
     });
   }
-  
+
+
   generateArtistHTML(artistData);

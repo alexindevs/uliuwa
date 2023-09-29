@@ -32,7 +32,10 @@ body {
     align-items: center;
     justify-content: space-between;
     color: black;
+
+    
   }
+
   .navbar .navlist {
     display: flex;
     margin-right: 0px;
@@ -95,6 +98,8 @@ body {
       background-color: transparent;
       top: 0;
       width: 100%;
+
+
     }
     .navbar .navlist {
       width: 100%;
@@ -120,7 +125,6 @@ body {
     .navbar .hamburger {
       display: block;
       width: 50px;
-      height: 25px;
     }
     .navbar .hamburger .line {
       background-color: black;

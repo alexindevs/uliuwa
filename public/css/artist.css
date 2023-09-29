@@ -14,10 +14,6 @@
   background-color: #000000;
 }
 
-.navlist li{
-  transition: .3s 3 ease;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -145,7 +141,6 @@ body {
   .navbar .hamburger {
     display: block;
     width: 50px;
-    height: 25px;
   }
   .navbar .hamburger .line {
     background-color: white;
@@ -173,7 +168,6 @@ body {
   font-family: "Archivo";
   line-height: 22px;
   word-wrap: break-word;
-  transition: .3s ease;
 }
 #links a.active {
   color: black;
@@ -216,7 +210,7 @@ body {
   }
   #links a {
     margin-right: 0px;
-    color: transaparent;
+    color: white;
     font-weight: 300;
     text-decoration: none;
     font-size: 16px;

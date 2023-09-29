@@ -41,6 +41,52 @@ body {
     color: white;
     align-items: center;
 
+    .explore {
+        padding: 10px 25px;
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        cursor: pointer;
+        font-size: 22px;
+        font-family: 'Archivo';
+        display: block;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s;
+        
+        &::before, &::after {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            transform: skew(90deg) translate(-50%, -50%);
+            position: absolute;
+            inset: 50%;
+            left: 25%;
+            z-index: -2500;
+            transition: .5s ease-out;
+            background-color: white;
+        }
+    
+        &::before {
+            top: -50%;
+            left: -25%;
+            transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+    
+        }
+        &:hover::before {
+            transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+        }
+    
+        &:hover::after {
+            transform: skew(45deg) translate(-50%, -50%);
+        }
+    
+        &:hover {
+            color: black;
+        }
+    }
+
 
     .navlist {
         display: flex;
@@ -118,6 +164,10 @@ body {
       top: 0;
       width: 100%;
 
+      .explore {
+        display: none;
+      }
+
       .navlist {
         width: 100%;
         height: 100vh;
@@ -145,7 +195,6 @@ body {
       .hamburger {
         display: block;
         width: 50px;
-        height: 25px;
       }
   
       .hamburger .line {
@@ -165,16 +214,16 @@ main {
         width: 100%;
         height: 97vh;
 
-                &::after {
-            content: '';
-            top: 0;
-            left: 0;
-            z-index: -1;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.461), transparent);
-            display: block;
+            &::after {
+                content: '';
+                top: 0;
+                left: 0;
+                z-index: -1;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.461), transparent);
+                display: block;
           }
           
           .banner {
@@ -284,7 +333,7 @@ main {
     }
 
     #about {
-        margin: 90px 40px;
+        margin: 90px 90px;
        
         .heading {
             letter-spacing: 2px;
@@ -318,7 +367,6 @@ main {
 }
     }
 
-
     @media (max-width: 768px) {
         #about {
             margin: 50px 20px;
@@ -337,7 +385,7 @@ main {
 
     #artworks {
         background-color: white;
-        margin: 90px 40px;
+        margin: 90px 90px;
 
         .heading {
             letter-spacing: 2px;
@@ -386,8 +434,9 @@ main {
                     width: 58%;
 
                     & > * {
-                            margin-top: 5px;
+                        margin-top: 5px;
                     }
+
                     .art_title {
                         font-weight: 900;
                         font-size: 20px;
@@ -433,11 +482,13 @@ main {
         margin: 90px 0px 0px;
         position: relative;
         height: 70vh;
+        background: radial-gradient(gold, black);
         width: 100%;
 
         .slide {
             position: absolute;
             top: 0%;
+            transition: all 800ms;
             left: 0%;
             width: 100%;
             height: 100%;
@@ -467,44 +518,70 @@ main {
             }
     }
 
+    .splide__arrow--prev {
+        left: -4em;
+    }
+
+    .splide__arrow--next {
+        right: -4em;
+    }
+
     #more-exhibitions {
-        margin: 90px 40px;
-
+        margin: 90px 90px; /* Margin so massive it could rival the Great Wall of China */
+    
         .heading {
-            letter-spacing: 2px;
-            font-weight: 300;
+            letter-spacing: 2px; /* Because spacing letters apart is more fun than just using a decent font */
+            font-weight: 300; /* Gotta make sure that font weight is on a diet, too */
         }
-
+    
         hr {
             background-color: black;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Because why not throw a random margin at a horizontal rule? */
         }
+        
+
 
         .exhibitions {
             margin: 30px 0px 30px 0px;
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
-            overflow: scroll;
-            row-gap: 40px;
+            justify-content: space-between;
+            overflow: scroll; /* Scrolling exhibitions? It's like a digital art museum! */
+            row-gap: 40px; /* Rows should have gaps, just like my knowledge of modern art. */
 
             &::-webkit-scrollbar {
-                display: none;
+                display: none; /* Hiding scrollbars because, well, who needs them? */
             }
 
-            .exhibition {
-                width: 30vw;
+            .exhibition { /* Each slide takes up one-third of the container width */
                 .exh-img {
-                    width: 100%;
-                    height: 30vw;
+                    width: 25vw;
+                    height: 30vw; /* Keeping it all proportional, even if it breaks the laws of aesthetics */
                 }
             }
         }
+
     }
 
+    .swiper-button-next, .swiper-button-prev {
+        color: black;
+    }
+    
+    .splide__pagination__page.is-active {
+        color: black;
+        background: black;
+        transform: scale(1.4);
+        z-index: 1;
+    }
     @media (max-width: 800px) {
         #more-exhibitions {
             margin: 50px 20px;
+
+            .splide__arrow--prev {
+display: none;            }
+        
+            .splide__arrow--next {
+display: none;            }
 
             .exhibitions {
                 margin: 30px 0px 30px 0px;
@@ -516,6 +593,7 @@ main {
 
                     .exh-img {
                         height: 400px;
+                        width: 100%;
                         padding-bottom: 15px;
                     }
                 }

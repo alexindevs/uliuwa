@@ -7,10 +7,6 @@
   color: white;
 }
 
-.navlist li{
-  transition: .3s ease;
-}
-
 body {
   width: 100%;
 }
@@ -50,7 +46,6 @@ body {
 }
 .navbar .navlist li:hover {
   font-size: 22px;
-  transition: .2s ease;
 }
 .navbar .hamburger {
   width: 3.6rem;
@@ -124,7 +119,6 @@ body {
   .navbar .hamburger {
     display: block;
     width: 50px;
-    height: 25px;
   }
   .navbar .hamburger .line {
     background-color: white;
@@ -134,7 +128,7 @@ body {
   }
 }
 :root {
-  --swiper-theme-color: black;
+  --swiper-theme-color: white;
 }
 
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
