@@ -40,6 +40,46 @@ body {
   color: white;
   align-items: center;
 }
+.navbar .explore {
+  padding: 10px 25px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  font-family: "Archivo";
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.navbar .explore::before, .navbar .explore::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -2500;
+  transition: 0.5s ease-out;
+  background-color: white;
+}
+.navbar .explore::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+.navbar .explore:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+.navbar .explore:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+.navbar .explore:hover {
+  color: black;
+}
 .navbar .navlist {
   display: flex;
   margin-right: 70px;
@@ -149,6 +189,9 @@ body {
     top: 0;
     width: 100%;
   }
+  .navbar .explore {
+    display: none;
+  }
   .navbar .navlist {
     width: 100%;
     height: 100vh;
@@ -180,7 +223,6 @@ body {
   .navbar .hamburger {
     display: block;
     width: 50px;
-    height: 25px;
   }
   .navbar .hamburger .line {
     background-color: white;
@@ -294,7 +336,7 @@ main #hero .text .exh-icons {
   }
 }
 main #about {
-  margin: 90px 40px;
+  margin: 90px 90px;
 }
 main #about .heading {
   letter-spacing: 2px;
@@ -334,7 +376,7 @@ main #about .descriptions .right p {
 }
 main #artworks {
   background-color: white;
-  margin: 90px 40px;
+  margin: 90px 90px;
 }
 main #artworks .heading {
   letter-spacing: 2px;
@@ -414,11 +456,13 @@ main #slideshow {
   margin: 90px 0px 0px;
   position: relative;
   height: 70vh;
+  background: radial-gradient(gold, black);
   width: 100%;
 }
 main #slideshow .slide {
   position: absolute;
   top: 0%;
+  transition: all 800ms;
   left: 0%;
   width: 100%;
   height: 100%;
@@ -444,38 +488,57 @@ main #slideshow .slide-buttons {
     height: 50vh;
   }
 }
+main .splide__arrow--prev {
+  left: -4em;
+}
+main .splide__arrow--next {
+  right: -4em;
+}
 main #more-exhibitions {
-  margin: 90px 40px;
+  margin: 90px 90px; /* Margin so massive it could rival the Great Wall of China */
 }
 main #more-exhibitions .heading {
-  letter-spacing: 2px;
-  font-weight: 300;
+  letter-spacing: 2px; /* Because spacing letters apart is more fun than just using a decent font */
+  font-weight: 300; /* Gotta make sure that font weight is on a diet, too */
 }
 main #more-exhibitions hr {
   background-color: black;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Because why not throw a random margin at a horizontal rule? */
 }
 main #more-exhibitions .exhibitions {
   margin: 30px 0px 30px 0px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  overflow: scroll;
-  row-gap: 40px;
+  justify-content: space-between;
+  overflow: scroll; /* Scrolling exhibitions? It's like a digital art museum! */
+  row-gap: 40px; /* Rows should have gaps, just like my knowledge of modern art. */
 }
 main #more-exhibitions .exhibitions::-webkit-scrollbar {
-  display: none;
+  display: none; /* Hiding scrollbars because, well, who needs them? */
 }
-main #more-exhibitions .exhibitions .exhibition {
-  width: 30vw;
-}
+main #more-exhibitions .exhibitions .exhibition { /* Each slide takes up one-third of the container width */ }
 main #more-exhibitions .exhibitions .exhibition .exh-img {
-  width: 100%;
-  height: 30vw;
+  width: 25vw;
+  height: 30vw; /* Keeping it all proportional, even if it breaks the laws of aesthetics */
+}
+main .swiper-button-next, main .swiper-button-prev {
+  color: black;
+}
+main .splide__pagination__page.is-active {
+  color: black;
+  background: black;
+  transform: scale(1.4);
+  z-index: 1;
 }
 @media (max-width: 800px) {
   main #more-exhibitions {
     margin: 50px 20px;
+  }
+  main #more-exhibitions .splide__arrow--prev {
+    display: none;
+  }
+  main #more-exhibitions .splide__arrow--next {
+    display: none;
   }
   main #more-exhibitions .exhibitions {
     margin: 30px 0px 30px 0px;
@@ -487,6 +550,7 @@ main #more-exhibitions .exhibitions .exhibition .exh-img {
   }
   main #more-exhibitions .exhibitions .exhibition .exh-img {
     height: 400px;
+    width: 100%;
     padding-bottom: 15px;
   }
 }

@@ -193,7 +193,6 @@ body {
   .navbar .hamburger {
     display: block;
     width: 50px;
-    height: 28px;
   }
   .navbar .hamburger .line {
     background-color: black;
@@ -264,6 +263,7 @@ main #exhibitions {
 }
 main #exhibitions #current {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   justify-content: space-between;
   height: 70vh;
@@ -545,70 +545,5 @@ footer .footer-right .navlist {
     text-align: center;
   }
 }
-@media (max-width: 500px) {
-  main h2{
-    font-size: 37px;
-    word-spacing: 0;
-  }
-  main #exhibitions #archive .past-exhibition{
-    display: grid;
-    padding: 10px;
-  }
-  main #exhibitions #archive .past-exhibition .text > *:nth-child(n){
-    margin-left: 10px;
-  }
-  main #exhibitions #archive .past-exhibition .exh-img{
-    width: 200px;
-    height: 200px;
-  }
-  main #exhibitions #current{
-    display: grid;
-    overflow: scroll;
-  }
-  main #exhibitions #current .side{
-    overflow: visible;
-    display: grid;
-    margin-top: -30px;
-  }
-  main #exhibitions #current .main{
-    display: grid;
-    overflow: visible;
-    /* margin-top: 70px; */
-  }
-  main #exhibitions #current .side .current-exhibition{
-    margin-top: 15px;
-  }
 
-  main #exhibitions #upcoming .future-exhibition{
-    display: grid;
-    padding: 10px;
-    margin-top: 30px;
-  }
-  main #exhibitions #upcoming .future-exhibition .exh-img{
-    width: 200px;
-    height: 200px;
-  }
-  main .header #links {
-    gap: 10px;
-  }
-}
-@media (max-width: 350px) {
-  main #exhibitions #archive .past-exhibition .exh-img,
-  main #exhibitions #upcoming .future-exhibition .exh-img{
-    width: 150px;
-    height: 150px;
-  }
-  main .header .extra{
-    display: none;
-  }
-}
-@media (max-width: 370px){
-  main .header .extra{
-    display: none;
-  }
-  main h2{
-    font-size: 30px;
-    margin-left: -10px;
-  }
-}
 /*# sourceMappingURL=exhibitions.css.map */

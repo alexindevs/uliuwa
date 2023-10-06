@@ -11,9 +11,17 @@
     <link rel="icon" type="image/png" href="images/IMG_0369.PNG" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/exhibition.css">
 </head>
 <body>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+          var splide = new Splide( '.splide' );
+          splide.mount();
+        } );
+      </script>
     <nav class="navbar">
         <img src="images/logo.png" class="logo" onclick="window.location.href = '/'" alt="">
         <ul class="navlist">
@@ -24,6 +32,7 @@
 
             <button type="button" class="explore signup">Sign Up</button>
         </ul>
+        <button class="explore">Sign Up</button>
         <div class="hamburger" onclick="toggleNavbar()">
           <div class="line"></div>
           <div class="line"></div>
@@ -101,11 +110,11 @@
         function showSlide(index) {
             // Hide all slides
             slides.forEach((slide) => {
-                slide.style.display = 'none';
+                slide.style.opacity = 0;
             });
     
             // Show the slide at the specified index
-            slides[index].style.display = 'block';
+            slides[index].style.opacity = 1;
         }
     
         // Function to go to the next slide
@@ -136,31 +145,74 @@
     <section id="more-exhibitions">
         <h2 class="heading">Explore More Exhibitions</h2>
         <hr>
-        <div class="exhibitions">
-            <div class="exhibition">
-                <img src="art/Circle of friends, Acrylic on canvas, 36in x 42in, 2022.jpg" class="exh-img" alt="">
-                <div class="text">
-                    <h3>WE ARE NOT OKAY</h3>
-                    <h4>Sisiano Paolo</h4>
-                    <p>August 12, 2022 to September 12, 2022</p>
+        <div class="splide" aria-label="Basic Structure Example">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <div class="exhibitions">
+                        <div class="exhibition">
+                            <img src="art/Circle of friends, Acrylic on canvas, 36in x 42in, 2022.jpg" class="exh-img" alt="">
+                            <div class="text">
+                                <h3>WE ARE NOT OKAY</h3>
+                                <h4>Sisiano Paolo</h4>
+                                <p>August 12, 2022 to September 12, 2022</p>
+                            </div>
+                        </div>
+                        <div class="exhibition">
+                            <img src="images/artist_bg.png" class="exh-img" alt="">
+                            <div class="text">
+                                <h3>HELLO WORLD</h3>
+                                <h4>Frederic Douglas</h4>
+                                <p>December 12, 2022 to January 12, 2023</p>
+                            </div>
+                        </div>
+                        <div class="exhibition">
+                            <img src="art/Persevere_ 3.jpg" class="exh-img" alt="">
+                            <div class="text">
+                                <h3>PERSEVERE</h3>
+                                <h4>Daniel Obiejesi</h4>
+
+                                <p>April 15, 2023 to May 15, 2023</p>
+                            </div>
+                        </div>
                 </div>
-            </div>
-            <div class="exhibition">
-                <img src="images/artist_bg.png" class="exh-img" alt="">
-                <div class="text">
-                    <h3>HELLO WORLD</h3>
-                    <h4>Frederic Douglas</h4>
-                    <p>December 12, 2022 to January 12, 2023</p>
+                </li>
+                <li class="splide__slide">
+                    <div class="exhibitions">
+                        <div class="exhibition">
+                            <img src="art/Circle of friends, Acrylic on canvas, 36in x 42in, 2022.jpg" class="exh-img" alt="">
+                            <div class="text">
+                                <h3>WE ARE NOT OKAY</h3>
+                                <h4>Sisiano Paolo</h4>
+                                <p>August 12, 2022 to September 12, 2022</p>
+                            </div>
+                        </div>
+                        <div class="exhibition">
+                            <img src="images/artist_bg.png" class="exh-img" alt="">
+                            <div class="text">
+                                <h3>HELLO WORLD</h3>
+                                <h4>Frederic Douglas</h4>
+                                <p>December 12, 2022 to January 12, 2023</p>
+                            </div>
+                        </div>
+                        <div class="exhibition">
+                            <img src="art/Persevere_ 3.jpg" class="exh-img" alt="">
+                            <div class="text">
+                                <h3>PERSEVERE</h3>
+                                <h4>Daniel Obiejesi</h4>
+                                <p>April 15, 2023 to May 15, 2023</p>
+                            </div>
+                        </div>
+                        </div>
+                </li>
+                </ul>
                 </div>
-            </div>
-            <div class="exhibition">
-                <img src="art/Persevere_ 3.jpg" class="exh-img" alt="">
-                <div class="text">
-                    <h3>PERSEVERE</h3>
-                    <p>April 15, 2023 to May 15, 2023</p>
                 </div>
-            </div>
-        </div>
+
+        
+
+        <!--  -->
+ 
     </section>
     </main>
     <footer>
