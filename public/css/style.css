@@ -338,7 +338,7 @@ main #display .attribution .explore:hover, .explore:hover {
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 5s;
+  /* animation-delay: 5s; */
 }
 
 @keyframes signout {

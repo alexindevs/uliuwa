@@ -197,6 +197,139 @@ body {
     background-color: #fff;
   }
 }
+
+
+#register {
+  position: fixed;
+  padding: 50px;
+  bottom: 20px;
+  right: 40px;
+  background-color: rgba(0, 0, 0, 0.8274509804);
+  color: white;
+  z-index: 2500000;
+  /* display: none; */
+  transition: .5s ease;
+  transform: translateX(150%);
+  animation-name: signout;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /* animation-delay: 5s; */
+}
+
+@keyframes signout {
+  0%{
+    transform: translateX(150%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+#register div.header {
+  visibility: hidden;
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+#register .x-icon {
+  visibility: visible;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  color: white;
+}
+#register h2 {
+  font-family: "Archivo";
+  font-size: 35px;
+}
+#register p {
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+#register input[type=text], #register input[type=email] {
+  display: block;
+  background: transparent;
+  padding: 10px;
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  margin-bottom: 20px;
+  width: 100%;
+  transition: border 1s;
+}
+#register input[type=text]:focus, #register input[type=email]:focus {
+  border: none;
+  border-bottom: 1px solid white;
+}
+#register .custom-select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+#register .select-selected {
+  background: transparent;
+  padding: 10px;
+  color: white;
+  border: 1px solid white;
+  outline: none;
+}
+#register .select-items {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5294117647);
+  min-width: 100%;
+  overflow: auto;
+  z-index: 1;
+  border: 1px solid white;
+}
+#register .select-items .select-item {
+  padding: 10px;
+  cursor: pointer;
+}
+#register .select-items .select-item:hover {
+  background-color: #000000;
+}
+#register button {
+  display: block;
+  background: transparent;
+  padding: 10px 15px;
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  margin-bottom: 20px;
+}
+#register .terms-notif {
+  margin-top: 60px;
+  color: grey !important;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  #register {
+    position: fixed;
+    padding: 50px;
+    width: 100vw;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: rgba(38, 38, 38, 0.9411764706);
+  }
+  #register div.header {
+    display: flex;
+    visibility: visible;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: space-between;
+  }
+  #register .x-icon {
+    margin-left: auto;
+    position: static;
+    color: white;
+  }
+}
 main #contact {
   display: flex;
   justify-content: space-evenly;
@@ -303,7 +436,8 @@ main #contact .right #serviceType {
 main #contact .right input[type=submit] {
   background-color: rgb(0, 0, 0);
   border: none;
-  height: 30px;
+  height: 50px;
+  font-size: 18px;
   color: white;
   width: 100%;
   margin-bottom: 35px;

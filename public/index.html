@@ -23,7 +23,7 @@
             <li onclick="window.location.href = '/about-us'">About</li>
             <li onclick="window.location.href = '/contact'">Contact</li>
 
-            <button type="button" class="explore signup">Sign Up</button>
+            <button type="button" class="explore signup" onclick="registerPopup()">Sign Up</button>
         </ul>
 
         <div class="hamburger" onclick="toggleNavbar()">
@@ -42,6 +42,12 @@
   navlist.classList.toggle('active');
   hamburger.classList.toggle('active');
 }
+
+function registerPopup(){
+    const popup = document.getElementById('register');
+    popup.style.display = 'block';
+    // popup.style.animationDelay = '.1s';
+  }
 
     </script>
     <main>
