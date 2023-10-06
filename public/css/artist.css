@@ -121,12 +121,12 @@ body {
   margin-right: -25px;
 }
 .explore {
-  padding: 10px 25px;
+  padding: 5px 20px;
   background: transparent;
   border: 1px solid white;
   color: white;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 19px;
   font-family: "Archivo";
   display: block;
   position: relative;

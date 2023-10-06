@@ -109,12 +109,12 @@ body {
   margin-right: -25px;
 }
 .explore {
-  padding: 10px 25px;
+  padding: 5px 20px;
   background: transparent;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid black;
+  color: black;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 19px;
   font-family: "Archivo";
   display: block;
   position: relative;
@@ -133,7 +133,7 @@ body {
   left: 25%;
   z-index: -2500;
   transition: 0.5s ease-out;
-  background-color: white;
+  background-color: black;
 }
 .explore::before, .explore::before {
   top: -50%;
@@ -147,7 +147,7 @@ body {
   transform: skew(45deg) translate(-50%, -50%);
 }
 .explore:hover, .explore:hover {
-  color: black;
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
