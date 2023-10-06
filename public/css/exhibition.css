@@ -95,6 +95,52 @@ body {
   transform: translateY(-0.8rem) rotate(-45deg);
   width: 2rem;
 }
+.navbar button{
+  margin-top: -8px;
+  margin-left: 15px;
+  margin-right: -25px;
+}
+.explore {
+  padding: 10px 25px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  font-family: "Archivo";
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  transition: all 0.5s;
+}
+.explore::before, .explore::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -2500;
+  transition: 0.5s ease-out;
+  background-color: white;
+}
+.explore::before, .explore::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+.explore:hover::before, .explore:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+.explore:hover::after, .explore:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+.explore:hover, .explore:hover {
+  color: black;
+}
 
 @media screen and (max-width: 768px) {
   .navbar {
@@ -119,6 +165,14 @@ body {
   }
   .navbar .navlist li {
     color: white;
+    font-size: 25px;
+  }
+  .navbar .navlist li:hover {
+    font-size: 29px;
+  }
+  .explore{
+    width: 150px;
+    height: 50px;
   }
   .navbar .navlist.active {
     bottom: 0;
