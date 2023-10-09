@@ -19,6 +19,9 @@
             <li onclick="window.location.href = '/exhibitions'">Exhibitions</li>
             <li onclick="window.location.href = '/about-us'">About</li>
             <li onclick="window.location.href = '/contact'">Contact</li>
+
+            <button type="button" class="explore signup" onclick="registerPopup()">Sign Up</button>
+
         </ul>
         <div class="hamburger" onclick="toggleNavbar()">
           <div class="line"></div>
@@ -37,6 +40,11 @@
   hamburger.classList.toggle('active');
 }
 
+function registerPopup(){
+    const popup = document.getElementById('register');
+    popup.style.display = 'block';
+    // popup.style.animationDelay = '.1s';
+  }
     </script>
     <main>
         <section id="contact">
@@ -85,6 +93,46 @@
 
         </section>
         </main>
+        <section id="register">
+          <div class="header">
+            <img src="images/logo.png" class="logo" onclick="window.location.href = '/'" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="x-icon" viewBox="0 0 32 32">
+              <line x1="6" y1="6" x2="26" y2="26" stroke="white" stroke-width="3" />
+              <line x1="6" y1="26" x2="26" y2="6" stroke="white" stroke-width="3" />
+            </svg>            
+          </div>
+            <h2>Welcome to Uliuwa</h2>
+            <p>Sign up for updates on exhibitions, artists and events</p>
+            <input type="text" name="fullName" id="fullName" placeholder="Enter your full name">
+            <input type="email" name="email" id="email" placeholder="enter your email">
+            <input type="text" name="interests" id="interests" placeholder="Your Interests (Please separate with commas)">
+            <div class="custom-select">
+                <div class="select-selected">What best describes you?</div>
+                <div class="select-items">
+                  <div class="select-item" data-value="Artist">Artist</div>
+                  <div class="select-item" data-value="ArtManager">Art Manager</div>
+                  <div class="select-item" data-value="ArtEnthusiast">Art Enthusiast</div>
+                </div>
+                <select name="description" id="description" style="display: none;">
+                  <option value="Artist">Artist</option>
+                  <option value="ArtManager">Art Manager</option>
+                  <option value="ArtEnthusiast">Art Enthusiast</option>
+                </select>
+              </div>
+              <div class="custom-select">
+                <div class="select-selected">Do you work in arts?</div>
+                <div class="select-items">
+                  <div class="select-item" data-value="Yes">Yes</div>
+                  <div class="select-item" data-value="No">No</div>
+                </div>
+                <select name="workInArts" id="workInArts" style="display: none;">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>              
+            <button type="submit">Submit</button>
+            <p class="terms-notif">By submitting this form, you're agreeing to our <a href="terms">terms and conditions.</a></p>
+        </section> 
         <footer>
             <div class="footer-left">
                 <div class="heading"><h4>Contact Us</h4>

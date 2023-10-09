@@ -49,9 +49,9 @@ body {
   cursor: pointer;
 }
 .navbar button{
-  margin-top: -15px;
+  margin-top: -8px;
   margin-left: 15px;
-  margin-right: -20px;
+  margin-right: -25px;
 }
 
 
@@ -99,6 +99,15 @@ body {
   transform: translateY(-0.8rem) rotate(-45deg);
   width: 2rem;
 }
+.navbar .explore{
+  font-size: 16px;
+  margin-left: 20px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: -7px; */
+}
 
 @media screen and (max-width: 768px) {
   .navbar {
@@ -123,6 +132,14 @@ body {
   }
   .navbar .navlist li {
     color: white;
+    font-size: 25px;
+  }
+  .navbar .navlist li:hover {
+    font-size: 29px;
+  }
+  .explore{
+    width: 150px;
+    height: 50px;
   }
   .navbar .navlist.active {
     bottom: 0;
@@ -173,6 +190,8 @@ main #display .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   margin: 0px 10px;
+  background: white;
+  cursor: pointer;
 }
 main #display .artwork {
   position: absolute;
@@ -219,7 +238,7 @@ main #display .attribution .fade-in {
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  animation-delay: 2s;
+  animation-delay: .3s;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: forwards;
@@ -229,10 +248,10 @@ main #display .attribution .fade-in {
     opacity: 0;
     transform: translateY(40px);
   }
-  50% {
+  /* 50% {
     opacity: 0.5;
     transform: translateY(20px);
-  }
+  } */
   100% {
     opacity: 1;
     transform: translateY(0px);
@@ -319,7 +338,7 @@ main #display .attribution .explore:hover, .explore:hover {
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 5s;
+  /* animation-delay: 5s; */
 }
 
 @keyframes signout {
