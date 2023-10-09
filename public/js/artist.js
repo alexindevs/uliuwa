@@ -4,6 +4,8 @@ const artistData = [
     alt: 'Watcher 1',
     name: 'Olumide Onadipe',
     year: 2021,
+    medium: 'Acrylic on canvas',
+    dimensions: '42in x 36in',
     title: 'Watcher 1'
   },
   
@@ -12,6 +14,8 @@ const artistData = [
     alt: 'Room Mates 4',
     name: 'Ogbemi Heymann',
     year: 2013,
+    medium: 'Digital',
+    dimensions: '42in x 36in',
     title: 'Room Mates 4'
   },
   {
@@ -19,6 +23,8 @@ const artistData = [
     alt: 'Room Mates 4',
     name: 'Ogbemi Heymann',
     year: 2013,
+    medium: 'Digital',
+    dimensions: '42in x 36in',
     title: 'Room Mates 4'
   },
   {
@@ -26,6 +32,8 @@ const artistData = [
     alt: 'Elation',
     name: 'Daniel Obiejesi',
     year: 2022,
+    medium: 'Acrylic on canvas',
+    dimensions: '42in x 36in',
     title: 'Desire III, Acrylic on canvas, 42in x 36in 2022.jpg'
   },
   {
@@ -33,6 +41,8 @@ const artistData = [
     alt: 'Room Mates 4',
     name: 'Ogbemi Heymann',
     year: 2013,
+    medium: 'Digital',
+    dimensions: '42in x 36in',
     title: 'Room Mates 4'
   },
   {
@@ -40,6 +50,8 @@ const artistData = [
     alt: 'Room Mates 4',
     name: 'Ogbemi Heymann',
     year: 2013,
+    medium: 'Digital',
+    dimensions: '42in x 36in',
     title: 'Room Mates 4'
   },
 ];
@@ -71,19 +83,24 @@ function generateArtistHTML(data) {
   columns.forEach(column => artList.append(column));
 
   // Distribute artist items into columns
+  //artist name, artwork name, year created, medium used, dimensions in cm
   data.forEach(artist => {
     const artistDiv = $('<div>').addClass('artist');
     const image = $('<img>').attr('src', artist.imageSrc).attr('alt', artist.alt).addClass('artwork');
     const artDetails = $('<div>').addClass('art-details');
     const textDiv = $('<div>').addClass('text');
+    const artMedium = $('<p>').addClass('art_medium').text(artist.medium);
+    const artDimensions = $('<p>').addClass('art_dimensions').text(artist.dimensions);
     const nameHeading = $('<h4>').addClass('art_title').text(artist.name);
-    const enquireButton = $('<button>').addClass('art-button').text('EXPLORE');
+    const enquireButton = $('<button>').addClass('art-button').text('ENQUIRE');
     const yearPara = $('<p>').addClass('year').text(artist.year);
     const titlePara = $('<p>').addClass('title').text(artist.title);
 
     textDiv.append(nameHeading);
-    textDiv.append(yearPara);
     textDiv.append(titlePara);
+    textDiv.append(yearPara);
+    textDiv.append(artMedium);
+    textDiv.append(artDimensions);
     artDetails.append(textDiv);
     artDetails.append(enquireButton);
     artistDiv.append(image);

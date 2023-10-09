@@ -33,9 +33,9 @@ body {
 }
 
 .logo {
-  width: 130px;
-  height: 70px;
-  float: none;cursor: pointer;
+  width: 150px;
+  height: 80px;
+  float: none;
 }
 
 @media (max-width: 600px) {
@@ -65,7 +65,6 @@ body {
   font-family: "Archivo";
   font-weight: 600;
   transition: font-size 0.5s;
-  cursor: pointer;
 }
 .navbar .navlist li:hover {
   font-size: 22px;
@@ -150,6 +149,10 @@ body {
     background-color: #fff;
   }
 }
+.hidden {
+  display: none;
+}
+
 #links {
   display: flex;
   top: 50%;
@@ -246,7 +249,7 @@ body {
 main #hero {
   position: relative;
   width: 100%;
-  height: 97vh;
+  height: 100vh;
 }
 main #hero::after {
   content: "";
@@ -267,15 +270,13 @@ main #hero .banner {
   height: 100vh;
   object-fit: cover;
   z-index: -2;
-  cursor: pointer;
 }
 main #hero .text {
   color: white;
-  top: 80%;
+  top: 50%;
   left: 20%;
   position: absolute;
-  transform: translate(-20%, -80%);
-  cursor: pointer;
+  transform: translate(-20%, -50%);
 }
 main #hero .text h1 {
   font-size: 80px;
@@ -298,7 +299,6 @@ main #hero .text p {
   font-size: 20px;
   font-weight: 300;
   width: 60%;
-  margin-top: 30%;
   text-shadow: 2px 2px 1px black;
   color: white;
 }
@@ -347,12 +347,12 @@ main #about {
   display: grid;
   grid-template-columns: auto auto;
   background-color: #1C1C1C;
-  padding: 90px 60px;
+  padding: 90px 90px;
   gap: 40px;
 }
 main #about .left p {
   color: white;
-  font-size: 35px;
+  font-size: 32px;
   font-family: "Archivo";
   font-weight: 600;
   line-height: 42px;
@@ -360,7 +360,7 @@ main #about .left p {
 }
 main #about .right p:first-of-type {
   color: white;
-  font-size: 20px;
+  font-size: 17px;
   font-family: "Archivo";
   font-weight: 400;
   line-height: 30px;
@@ -369,7 +369,7 @@ main #about .right p:first-of-type {
 }
 main #about .right p {
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Archivo";
   font-weight: 400;
   line-height: 24px;
@@ -427,7 +427,7 @@ main #artworks h2 {
 }
 main #artworks #artlist {
   display: grid;
-  gap: 40px;
+  gap: 60px;
   grid-template-columns: auto auto auto;
   margin: 60px;
 }
@@ -499,6 +499,7 @@ main #artworks #artlist .artist .art-details button {
     flex-direction: column;
     flex-grow: auto;
     padding: 40px 0px;
+    column-gap: 20px;
     justify-content: space-around;
     align-items: center;
     margin: 0px;
@@ -506,7 +507,7 @@ main #artworks #artlist .artist .art-details button {
 }
 main #biography {
   background-color: #1C1C1C;
-  padding: 90px 60px;
+  padding: 90px;
 }
 main #biography h2 {
   font-size: 80px;
@@ -561,6 +562,7 @@ main #biography button {
 main #exhibitions {
   background-color: #ffffff;
   padding: 90px 60px;
+  display: none;
 }
 main #exhibitions > h2 {
   font-size: 80px;
@@ -712,6 +714,7 @@ main #exhibitions #upcoming .upcoming-exhibition .text > *:nth-child(n) {
 @media (max-width: 800px) {
   main #exhibitions {
     padding: 40px 30px;
+    display: none;
   }
   main #exhibitions h2 {
     font-size: 40px;
