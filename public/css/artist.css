@@ -309,7 +309,7 @@ main #hero .text .exh-icons {
   main #hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 98vh;
   }
   main #hero::after {
     content: "";
