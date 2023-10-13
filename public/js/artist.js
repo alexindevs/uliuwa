@@ -69,6 +69,13 @@ function generateArtistHTML(data) {
     });
   };
 
+  const OneView = document.querySelector("#one-view");
+
+const showOneView = () => {
+    OneView.style.display = "flex";
+}
+
+
   const options = {
     root: null,
     rootMargin: '0px',
@@ -77,13 +84,13 @@ function generateArtistHTML(data) {
 
   const observer = new IntersectionObserver(callback, options);
 
-  // Create three columns
+  
   const numColumns = 3;
   const columns = Array.from({ length: numColumns }, () => $('<div>').addClass('art-column'));
   columns.forEach(column => artList.append(column));
 
-  // Distribute artist items into columns
-  //artist name, artwork name, year created, medium used, dimensions in cm
+   
+   
   data.forEach(artist => {
     const artistDiv = $('<div>').addClass('artist');
     const image = $('<img>').attr('src', artist.imageSrc).attr('alt', artist.alt).addClass('artwork');
@@ -106,7 +113,7 @@ function generateArtistHTML(data) {
     artistDiv.append(image);
     artistDiv.append(artDetails);
 
-    // Distribute artistDiv into columns
+     
     const columnIndex = data.indexOf(artist) % numColumns;
     columns[columnIndex].append(artistDiv);
 
@@ -114,69 +121,69 @@ function generateArtistHTML(data) {
   });
 }
 
+const enquireButtons = document.querySelectorAll('.art-button');
 
-
-
-
-// JavaScript for Exhibition Slider
-
-// Select all slides
+enquireButtons.forEach(enquireButton => {
+    console.log(enquireButton)
+enquireButton.addEventListener('click', showOneView);
+});
+ 
 const slides = $(".exhibition");
 
-// Loop through slides and set each slide's opacity and z-index
+ 
 slides.each(function(index) {
-  const opacity = index === 0 ? 1 : 0; // First slide should be fully visible (opacity = 1)
+  const opacity = index === 0 ? 1 : 0;  
   $(this).css({
     opacity: opacity,
-    "z-index": slides.length - index // Higher z-index for the first slide, lower for subsequent slides
+    "z-index": slides.length - index  
   });
 });
 
-// Select next slide button
+ 
 const nextSlide = $(".exh-icon.right");
 
-// Current slide counter
+ 
 let curSlide = 0;
-// Maximum number of slides
+ 
 let maxSlide = slides.length - 1;
 
-// Add event listener and navigation functionality
+ 
 nextSlide.on("click", function() {
-  // Check if current slide is the last and reset current slide
+   
   if (curSlide === maxSlide) {
     curSlide = 0;
   } else {
     curSlide++;
   }
 
-  // Update the opacity and z-index of each slide
+   
   slides.each(function(index) {
-    const opacity = index === curSlide ? 1 : 0; // Set opacity to 1 for the current slide, 0 for others
+    const opacity = index === curSlide ? 1 : 0;  
     $(this).css({
       opacity: opacity,
-      "z-index": slides.length - Math.abs(index - curSlide) // Higher z-index for the current slide, lower for others
+      "z-index": slides.length - Math.abs(index - curSlide)  
     });
   });
 });
 
-// Select previous slide button
+ 
 const prevSlide = $(".exh-icons .left");
 
-// Add event listener and navigation functionality
+ 
 prevSlide.on("click", function() {
-  // Check if current slide is the first and reset current slide to last
+   
   if (curSlide === 0) {
     curSlide = maxSlide;
   } else {
     curSlide--;
   }
 
-  // Update the opacity and z-index of each slide
+   
   slides.each(function(index) {
-    const opacity = index === curSlide ? 1 : 0; // Set opacity to 1 for the current slide, 0 for others
+    const opacity = index === curSlide ? 1 : 0;  
     $(this).css({
       opacity: opacity,
-      "z-index": slides.length - Math.abs(index - curSlide) // Higher z-index for the current slide, lower for others
+      "z-index": slides.length - Math.abs(index - curSlide)  
     });
   });
 });
@@ -192,16 +199,16 @@ function toggleExhibitions(element) {
     exhibitionId = '#upcoming';
   }
 
-  // Remove the active class from all links
+   
   $('.links a').removeClass('active');
 
-  // Add the active class to the clicked link
+   
   $(element).addClass('active');
 
-  // Fade out all exhibition divs except the one with the selected ID
+   
   $('.exhibitions').not(exhibitionId).fadeOut();
 
-  // Fade in the exhibition div with the selected ID
+   
   $(exhibitionId).fadeIn();
 }
 
@@ -247,7 +254,7 @@ $(document).ready(function() {
   });  
 })  
 
-//Link Section
+ 
 
 function toggleActiveLink(link) {
   const links = document.querySelectorAll('#links a');
@@ -299,16 +306,16 @@ const callback = (entries) => {
     }
   });
 
-  // Check if the top of the "hero" element is in the viewport
+   
   if (isInHeroViewport()) {
-    linksElement.style.display = 'none'; // Hide the links
+    linksElement.style.display = 'none';  
   } else {
-    linksElement.style.display = 'flex'; // Show the links
+    linksElement.style.display = 'flex';  
   }
 };
 
 const options = {
-  threshold: 0 // Adjust as needed
+  threshold: 0  
 };
 
 const observer = new IntersectionObserver(callback, options);
@@ -323,9 +330,10 @@ divsAndFontcolors.forEach(item => {
 window.addEventListener('scroll', () => {
  
     if (!isInHeroViewport()) {
-      linksElement.style.display = 'none'; // Hide the links
+      linksElement.style.display = 'none';  
     } else {
-      linksElement.style.display = 'flex'; // Show the links
+      linksElement.style.display = 'flex';  
     }
 });
 };
+
