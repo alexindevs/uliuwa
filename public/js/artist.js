@@ -69,13 +69,6 @@ function generateArtistHTML(data) {
     });
   };
 
-  const OneView = document.querySelector("#one-view");
-
-const showOneView = () => {
-    OneView.style.display = "flex";
-}
-
-
   const options = {
     root: null,
     rootMargin: '0px',
@@ -83,7 +76,6 @@ const showOneView = () => {
   };
 
   const observer = new IntersectionObserver(callback, options);
-
   
   const numColumns = 3;
   const columns = Array.from({ length: numColumns }, () => $('<div>').addClass('art-column'));
@@ -117,16 +109,36 @@ const showOneView = () => {
     const columnIndex = data.indexOf(artist) % numColumns;
     columns[columnIndex].append(artistDiv);
 
+    enquireButton.on('click', showOneView);
+
     observer.observe(artistDiv[0]);
   });
 }
 
-const enquireButtons = document.querySelectorAll('.art-button');
+const form_x_icon = document.querySelector("#one-view .form svg");
+const view_x_icon = document.querySelector("#one-view svg");
+const oneView = document.querySelector("#one-view");
+const oneView_form = document.querySelector("#one-view .form")
+const enquireButton = document.querySelector(".art-display #enquireHref") 
 
-enquireButtons.forEach(enquireButton => {
-    console.log(enquireButton)
-enquireButton.addEventListener('click', showOneView);
-});
+view_x_icon.addEventListener("click", () => {
+    oneView.style.display = "none";  
+})
+
+enquireButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    oneView_form.style.display = "block";  
+})
+
+form_x_icon.addEventListener("click", () => {
+    oneView_form.style.display = "none";
+})
+
+
+const showOneView = () => {
+  oneView.style.display = "block";
+}
+
  
 const slides = $(".exhibition");
 

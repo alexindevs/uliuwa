@@ -156,34 +156,11 @@ function registerPopup(){
     </div>
  
 </section>
-<script>
-    const form_x_icon = document.querySelector("#one-view .form svg");
-    const view_x_icon = document.querySelector("#one-view svg");
-    const oneView = document.querySelector("#one-view");
-    const oneView_form = document.querySelector("#one-view .form")
-    const enquireButton = document.querySelector(".art-display #enquireHref") 
-
-    view_x_icon.addEventListener("click", () => {
-        oneView.style.display = "none";  
-    })
-
-    enquireButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        oneView_form.style.display = "block";  
-    })
-
-    form_x_icon.addEventListener("click", () => {
-        oneView_form.style.display = "none";
-    })
-</script>
-
 
 <section id="links" class="hidden">
     <a href="#about"  onclick="toggleActiveLink(this)" class="jumplink active">Overview</a>
     <a href="#artworks" onclick="toggleActiveLink(this)" class="jumplink">Works</a>
     <a href="#biography" onclick="toggleActiveLink(this)" class="jumplink">Bio</a>
-    <a href="#exhibitions" onclick="toggleActiveLink(this)" class="jumplink">Exhibitions</a>
-
 </section>
 
     <main>

@@ -54,6 +54,7 @@ body {
   position: fixed;
   z-index: 4000;
   height: 100%;
+  display: none;
   background-color: white;
 }
 #one-view svg.x-icon-form {
@@ -146,6 +147,7 @@ body {
 #one-view .form {
   position: fixed;
   z-index: 5;
+  display: none;
   width: 50vw;
   padding: 100px 60px 60px;
   color: white;

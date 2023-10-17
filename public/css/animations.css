@@ -42,7 +42,7 @@
 .fadeInBlack {
   animation: fadeInBlack 2s ease 1s 1 normal forwards;
 }
-
+/* 
 .fadeInUp {
     opacity: 0;
     transform: translateY(40px);
@@ -53,4 +53,4 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
             
-}
+} */
